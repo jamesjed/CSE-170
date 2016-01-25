@@ -18,6 +18,15 @@
 	position: relative;
 	top: 25vh;
 }
+#outline{
+	background: none;
+	padding: 12px 22px;
+	border: 2px solid #ffffff;
+	color: #ffffff;
+	height: 10%;
+	width: 15%;
+
+}
 .navbar-nav > li > a
     {
 
