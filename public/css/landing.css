@@ -5,7 +5,14 @@
 	height: 90vh;
 }
 #third{
-	height: 95vh;
+	height: 90vh;
+}
+#getStarted{
+	height: 20vh;
+	background-color: #446cb3;
+}
+#theTeam{
+	height: 75vh;
 }
 #down{
 	position: relative;
@@ -18,6 +25,14 @@
 	position: relative;
 	top: 25vh;
 }
+#textOnDark{
+	font-family: 'Roboto', sans-serif;
+	color: white;
+}
+#textOnLight{
+	font-family: 'Roboto', sans-serif;
+	color: #34495e;
+}
 #outline{
 	background: none;
 	padding: 12px 22px;
@@ -26,6 +41,23 @@
 	height: 10%;
 	width: 15%;
 
+}
+#outline2{
+	background: none;
+	padding: 12px 22px;
+	border: 2px solid #ffffff;
+	color: #ffffff;
+	height: 35%;
+	width: 15%;
+
+}
+#secondTitle{
+	font-family: 'Roboto', sans-serif;
+	color: #34495e;
+}
+#footer{
+	background-color: #446cb3;
+	height: 30vh;
 }
 .navbar-nav > li > a
     {
