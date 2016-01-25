@@ -3,14 +3,13 @@ var exphbs = require("express-handlebars");
 
 var app = express();
 
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 
 // Middleware =============================================
 
-app.use('/public', express.static('./public'));
-
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
+app.use('/public', express.static(__dirname + '/public'));
 
 // Routing ================================================
 
@@ -20,4 +19,8 @@ app.get('/', function(req, res){
 
 // Listen on provided or default port =====================
 
-app.listen(process.env.PORT || 8080);
+var port = process.env.PORT || 8080;
+
+app.listen(port, function(){
+	console.log("Node server listening on port %s", port);
+});
