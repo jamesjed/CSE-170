@@ -1,0 +1,28 @@
+#first{
+	height:100vh;
+}
+#second{
+	height: 90vh;
+}
+#third{
+	height: 95vh;
+}
+#down{
+	position: relative;
+	top: 35vh;
+}
+#landingBar{
+	background-color: #446cb3;
+}
+#mainText{
+	position: relative;
+	top: 25vh;
+}
+.navbar-nav > li > a
+    {
+
+    text-align: center;
+
+    display: inline-block;
+    vertical-align: middle;
+}
