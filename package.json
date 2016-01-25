@@ -1,0 +1,17 @@
+{
+  "name": "170_site",
+  "version": "1.0.0",
+  "description": "A website for CSE 170",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Edward Natanauan, Harrison Wang, Kann Chea",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-handlebars": "^2.0.1",
+    "express3-handlebars": "^0.5.2",
+    "nodemon": "^1.8.1"
+  }
+}
