@@ -1,0 +1,92 @@
+<html>
+
+	<head>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="/public/flat-ui.css">
+
+		<style>
+
+			html, body{
+				margin: 0 auto;
+				background-color: #eeeeee;
+			}
+
+			.basic_container{
+				padding: 10px;
+				margin: 0 auto;
+			}
+
+			.block{
+				background-color: #ffffff;
+				width: 350px;
+				padding: 10px;
+				margin:10px;
+			}
+
+			div{
+				margin: 0 auto;
+			}
+
+			.sub{
+				color:white;
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+
+			<div class="jumbotron" style = "background-color: #36d7b7">
+				<center>
+					<h1 style = "color: white">
+					<img src="http://www.officialpsds.com/images/stocks/Crystal-Square-stock3776-large.png" width="15%"class = "img-circle">
+					James Edward Natanauan</h1> 
+				</center>
+			</div>
+
+		<div class="basic_container container" id="this-one" data-masonry-options='{ "isFitWidth": true }'>
+
+			<script>
+
+				for (var i = 0; i < 50; i++) {
+					var div = document.createElement('div');
+					div.setAttribute("class", "block");
+
+					var quote = Math.floor((Math.random()*4) + 1);
+
+					if(quote == 1){
+						div.innerHTML = '<p>The first rule of any technology used in a business is that automation applied to an efficient operation will magnify the efficiency. The second is that automation applied to an inefficient operation will magnify the inefficiency.</p>' ;
+					}
+					else if(quote == 2){
+						div.innerHTML = '<p>We all need people who will give us feedback. That\'s how we improve.</p>';
+					}
+					else if(quote == 3){
+						div.innerHTML = '<p>The ideal thing would be to have a 100 percent effective AIDS vaccine. And to have broad usage of that vaccine. That would literally break the epidemic.</p>';
+					}
+					else if(quote == 4){
+						div.innerHTML = '<p>Should there be cameras everywhere in outdoor streets? My personal view is having cameras in inner cities is a very good thing. In the case of London, petty crime has gone down. They catch terrorists because of it. And if something really bad happens, most of the time you can figure out who did it.</p>';
+					}
+					document.getElementById("this-one").appendChild(div);
+				}
+
+			</script>
+
+
+		</div>
+
+		<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+		<script>
+			$('div.basic_container').masonry({
+				itemSelector:'div.block'//,
+				//columnWidth: 'div.block'
+			});
+		</script>
+
+	</body>
+
+</html>

@@ -10,11 +10,16 @@ app.set('view engine', 'handlebars');
 // Middleware =============================================
 
 app.use('/public', express.static(__dirname + '/public'));
+app.set('views', __dirname + '/views');
 
 // Routing ================================================
 
 app.get('/', function(req, res){
 	res.render("index", {layout:false});
+});
+
+app.get('/sample', function(req, res){
+	res.render("masonry", {layout:false});
 });
 
 // Listen on provided or default port =====================
