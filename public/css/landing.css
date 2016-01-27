@@ -1,8 +1,13 @@
 #first{
 	height:100vh;
+	background-image: url(/public/ng-colab-space_night.gif);
+	background-size: cover;
 }
 #second{
 	height: 100vh;
+	margin: 0;
+	padding: 0;
+	vertical-align: bottom;
 }
 #third{
 	height: 100vh;
@@ -19,7 +24,7 @@
 	top: 35vh;
 }
 #landingBar{
-	background-color: #446cb3;
+	background-color: transparent;
 }
 #mainText{
 	position: relative;
