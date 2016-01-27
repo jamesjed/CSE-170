@@ -2,10 +2,10 @@
 	height:100vh;
 }
 #second{
-	height: 90vh;
+	height: 100vh;
 }
 #third{
-	height: 90vh;
+	height: 100vh;
 }
 #getStarted{
 	height: 20vh;
@@ -70,8 +70,11 @@
 #mainTitle{
 	font-size: 5em;
 }
+h4{
+	font-size: 2em;
+}
 #largeCaption{
-	font-size: 100em;
+	font-size: 2em;
 }
 
 
