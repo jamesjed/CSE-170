@@ -3,7 +3,7 @@
 	<head>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
+        
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 		<link rel="stylesheet" href="/public/flat-ui.css">
@@ -41,13 +41,55 @@
 
 	<body>
 
-			<div class="jumbotron" style = "background-color: #343456">
+            
+        <nav class="navbar navbar-default" role="navigation" style="background: #343456">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#" style=" color: white">Home</a>
+    </div>
+                  
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#" style=" color: white">Profile</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style=" color: white">Categories<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" >Action</a></li>
+                    <li><a href="#" >Another action</a></li>
+                    <li><a href="#" >Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" >Separated link</a></li>
+                    <li class="divider"></li>                    
+                </ul>
+            </li>
+        </ul>
+        
+        <!-- Search box -->
+        <div class="col-sm-3 col-md-3 pull-right">
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q">
+                </div>
+            </form>
+        </div>        
+    </div>
+</nav>
+        
+        <!--
+			<div class="jumbotron" style = "background-color: #36d7b7">
 				<center>
 					<h1 style = "color: white">
-					<img src="http://www.officialpsds.com/images/stocks/Crystal-Square-stock3776-large.png" width="15%"class = "img-circle">
+					<img src="http://www.officialpsds.com/images/stocks/Crystal-Square-stock3776-large.png" width="10%"class = "img-circle">
 					James Edward Natanauan</h1> 
 				</center>
 			</div>
+        -->
+            
 
 		<div class="basic_container container" id="this-one" data-masonry-options='{ "isFitWidth": true }'>
 
