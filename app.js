@@ -1,6 +1,7 @@
 var express = require('express');
 var exphbs = require("express-handlebars");
 
+// Initialize express object
 var app = express();
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
