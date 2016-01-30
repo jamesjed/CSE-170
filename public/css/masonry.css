@@ -1,0 +1,24 @@
+html, body{
+	margin: 0 auto;
+	background-color: #eeeeee;
+}
+
+.basic_container{
+	padding: 10px;
+	margin: 0 auto;
+}
+
+.block{
+	background-color: #ffffff;
+	width: 350px;
+	padding: 10px;
+	margin:10px;
+}
+
+div{
+	margin: 0 auto;
+}
+
+.sub{
+	color:white;
+}

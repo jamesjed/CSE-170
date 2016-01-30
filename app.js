@@ -23,6 +23,11 @@ app.get('/sample', function(req, res){
 	res.render("masonry", {layout:false});
 });
 
+app.get('/practice', function(req, res){
+	res.render("bootprac", {layout:false});
+});
+
+
 // Listen on provided or default port =====================
 
 var port = process.env.PORT || 8080;
