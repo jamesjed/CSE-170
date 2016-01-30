@@ -1,6 +1,9 @@
 {
   "name": "170_site",
   "version": "1.0.0",
+  "engines": {
+    "node": "4.1.0"
+  },
   "description": "A website for CSE 170",
   "main": "app.js",
   "scripts": {
