@@ -20,7 +20,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/sample', function(req, res){
-	res.render("masonry", {layout:false});
+	res.render("bootprac", {layout:false});
 });
 
 app.get('/practice', function(req, res){
