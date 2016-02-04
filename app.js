@@ -27,6 +27,14 @@ app.get('/practice', function(req, res){
 	res.render("bootprac", {layout:false});
 });
 
+app.get('/newpost', function(req, res) {
+    res.render("newpost", {layout: false});
+});
+
+app.get('/profile', function(req, res) {
+    res.render("profile", {layout: false});
+});
+
 
 // Listen on provided or default port =====================
 
