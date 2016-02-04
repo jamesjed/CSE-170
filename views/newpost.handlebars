@@ -7,7 +7,7 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
 		<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
 	<head>
-
+        
 	<body>
 
         <nav class="navbar navbar-default" role="navigation" style="background: white" id="mainNav"> 
@@ -17,7 +17,38 @@
         </nav>
 
 		<div class="container">
+    
+        <form>
             
+            <!-- Title box -->
+            <fieldset class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Title">
+            </fieldset>
+            
+            <!-- Post Catogories -->
+            <fieldset class="form-group">
+                <label for="exampleSelect1">Categories</label>
+                <select class="form-control" id="exampleSelect1">
+                    <option>Art</option>
+                    <option>Travel</option>
+                    <option>Food</option>
+                    <option>Music</option>
+                    <option>Dream</option>
+                </select>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="exampleTextarea">Your Thought</label>
+                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="exampleInputFile">Upload Image</label>
+                <input type="file" class="form-control-file" id="exampleInputFile">
+            </fieldset>
+  
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
         </div>
 
 	</body>
