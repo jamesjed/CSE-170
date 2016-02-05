@@ -10,87 +10,39 @@
     <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
     <style>
         .jumbotron {
-            position: relative;
-            background: #2574a9 url("jumbotron-bg.png") center center;
-            width: 100%;
-            height: 200px;
-            background-size: cover;
-            overflow: hidden;
+
         }
     </style>
 </head>
     
-<body>
+<body style="background-color: white">
 
-    <div class="jumbotron">
-    <div class="container">
-    
-    </div>
-    </div>
-    </div>
-    <div class="container " id="postDiv">
-			<div class="row" id="grid">
+    <nav class="navbar navbar-default" role="navigation" style="background: white" id="mainNav">
+    	<div class="container-fluid">
+    		<a class="navbar-brand"> Invenire </a>
+    		<div id="search">
+    			<center>
+    				<form class="navbar-form navbar-input-group">
 
+						<input id= "searchBar" type="text" placeholder=" Search">
 
-				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 centered grid-item" id="post">
-					
-					<img id="picture" src="http://www.givingbacksmiles.com/wp-content/uploads/2012/06/NAT-GEO-Ad-Tiger.jpg">
+					</form>
+				</center>
+    		</div>
+    		
+    	</div>
+    </nav>
 
-					<div class="container-fluid" style="background-color: #343456" >
-						<h4 style="color:white ">Column 1</h4>
-						<p style="color: white"> This is a subtitle<p>
-					</div>
-					<div id="content" class="container-fluid">
-						<p>The purpose of life is to live it, to taste experience to the utmost, to reach out eagerly and without fear for newer and richer experience.</p>
-					</div>
+	<div class="jumbotron" style = "background-color: white">
+		<div container-fluid>
+			<center>
 
-				</div>
+				<img src="http://www.officialpsds.com/images/stocks/Crystal-Square-stock3776-large.png" width="15%"class = "img-circle">
+				<h1> JamesN </h1> 
 
-
-
-				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 grid-item" id="post" id="titlebar">
-
-					<img id="picture" src="http://blog.eyewire.org/wp-content/uploads/2013/12/the-human-eye.jpg">
-
-					<div class="container-fluid" style="background-color: #343456">
-						<h4 style="color:white ">Column 2</h4>
-					</div>
-					<div id="content" class="container-fluid">
-						<p>Compassion is the sometimes fatal capacity for feeling what it is like to live inside somebody else's skin. It's the knowledge that there can never really be any peace and joy for me until there is peace and joy finally for you too.</p>
-					</div>
-					
-				</div>
-
-
-
-
-
-				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 grid-item" id="post" id="titlebar">
-
-					<img id="picture" src="http://scienceblogs.com/lifelines/files/2014/01/13243547332073393725diving-with-great-white-sharks.jpg">
-
-					<div class="container-fluid" style="background-color: #343456">
-						<h4 style="color:white ">Column 3</h4>
-					</div>
-					<div id="content" class="container-fluid">
-						<p>Compassion is the sometimes fatal capacity for feeling what it is like to live inside somebody else's skin. It's the knowledge that there can never really be any peace and joy for me until there is peace and joy finally for you too.</p>
-					</div>
-
-				</div>
-
-
-				<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
-				<script>
-					$('#grid').imagesLoaded( function(){
-					  $('#grid').masonry({
-					   itemSelector: '#post'
-					  });
-					});
-				</script>
-			</div>
+			</center>
 		</div>
-    
-        <a id="newPost" class="btn btn-success" onclick="window.location='./newpost';"> New Post </a>
+	</div>
 
 </body>
 </html>

@@ -25,10 +25,10 @@ i{
 	border-bottom: solid 1.5px #c9c9c9;
 	outline: none;
 	width: 40%;
-	text-align: center;
 	display: inline;
 	margin-bottom: 1%;
 	display: inline-block;
+	margin-right: 14vh;
 }
 
 #newPost{
