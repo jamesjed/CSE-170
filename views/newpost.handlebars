@@ -4,8 +4,11 @@
 		<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/public/css/flat-ui.css">
 		<link rel="stylesheet" type="text/css" href="/public/css/prac.css">
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
 		<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+        <!-- Text Editor -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		
 	<head>
         
 	<body>
@@ -37,14 +40,24 @@
                     <option>Dream</option>
                 </select>
             </fieldset>
-
+            
             <fieldset class="form-group">
-                <label for="exampleTextarea">Your Thought</label>
-                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-            </fieldset>
-            <fieldset class="form-group">
-                <label for="exampleInputFile">Upload Image</label>
-                <input type="file" class="form-control-file" id="exampleInputFile">
+                <div class="btn-group">
+                    <i class="fa fa-bold"></i>
+                    <i class="fa fa-italic"></i>
+                    <i class="fa fa-font"></i>
+                    <i class="fa fa-strikethrough"></i>
+                    <i class="fa fa-align-left"></i>
+                    <i class="fa fa-align-center"></i>
+                    <i class="fa fa-align-justify"></i>
+                    <i class="fa fa-align-right"></i>
+                    <i class="fa fa-list"></i>
+                    <i class="fa fa-columns"></i>
+                    <i class="fa fa-camera-retro fa-lg" type="file" class="form-control-file" id="exampleInputFile"></i>
+                </div>
+                <textarea class="form-control" id="exampleTextarea" rows="3" style="height: 300px;">
+                
+                </textarea>
             </fieldset>
   
             <button type="submit" class="btn btn-primary">Submit</button>
