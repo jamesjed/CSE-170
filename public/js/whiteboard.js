@@ -11,17 +11,18 @@ context.canvas.height = (window.innerHeight)*.8;
 var putPoint = function(e){
 
 	if(dragging){
-	context.beginPath();
+		context.beginPath();
 
 	// Offset x and y are the coordinates of the mouse relative
 	// to the browser window
-	context.arc(e.offsetX, e.offsetY, 2, radius, 2 * Math.PI);
-	context.fill();
+		context.arc(e.offsetX, e.offsetY, 2, radius, 2 * Math.PI);
+		context.fill();
 	}
 }
 
-var startDraw = function(){
+var startDraw = function(e){
 	dragging = true;
+	putPoint(e);
 }
 
 var stopDraw = function(){
