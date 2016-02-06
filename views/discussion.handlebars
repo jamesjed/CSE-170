@@ -1,1 +1,47 @@
-<h1> Discusion Page Pending <h1>
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="/public/css/discussion.css"></link>
+    	<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+    	<link rel="stylesheet" type="text/css" href="/public/css/flat-ui.css">
+    	<link rel="stylesheet" type="text/css" href="/public/css/prac.css">
+    	<link rel="stylesheet" type="text/css" href="/public/css/profile.css">
+    	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    	<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+	</head>
+
+<body style="background-color: white;">
+
+
+    <nav class="navbar navbar-default" role="navigation" style="background: white" id="mainNav">
+    	<div class="container-fluid">
+    		<a class="navbar-brand"> Invenire </a>
+    		<div id="search">
+    			<center>
+    				<form class="navbar-form navbar-input-group">
+
+						<input id= "searchBar" type="text" placeholder=" Search">
+
+					</form>
+				</center>
+    		</div>
+    		
+    	</div>
+    </nav> 
+	
+	<div class="container-fluid">
+		<center>
+			<canvas id="whiteboard" style="display: block; background-color: white;" width="100%">
+				Sorry your broswer does not support html canvas
+			</canvas>	
+		</center>
+	</div>
+
+
+	<!-- Javascript with whiteboard functionality-->
+	<script type="text/javascript" src="/public/js/whiteboard.js"></script>
+
+</body>
+
+</html>
