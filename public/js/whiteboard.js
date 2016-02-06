@@ -55,6 +55,7 @@ var touchPutPoint = function(e){
 
 var touchStartDraw = function(e){
 	e.preventDefault();
+	context.beginPath();
 	dragging = true;
 	touchPutPoint(e);
 }
