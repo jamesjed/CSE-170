@@ -45,7 +45,7 @@ var touchPutPoint = function(e){
 
 	// Offset x and y are the coordinates of the mouse relative
 	// to the browser window
-		context.arc(touch.pageX, touch.pageY, 2, radius, 2 * Math.PI);
+		context.arc(touch.pageX, touch.pageY, radius, 0, 2 * Math.PI);
 		context.fill();
 		context.beginPath();
 		context.moveTo(touch.pageX, touch.pageY);
