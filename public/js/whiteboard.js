@@ -29,10 +29,36 @@ var stopDraw = function(){
 	dragging = false;
 }
 
+var touchPutPoint = function(e){
+	e.preventDefault();
+	if(dragging){
+		var touch = e.touches[0];
+		context.beginPath();
+
+	// Offset x and y are the coordinates of the mouse relative
+	// to the browser window
+		context.arc(touch.pageX, touch.pageY, 2, radius, 2 * Math.PI);
+		context.fill();
+	}
+
+}
+
+var touchStartDraw = function(e){
+	e.preventDefault();
+	dragging = true;
+	var touch = e.touches[0];
+	touchPutPoint(e);
+}
+
+var touchStopDraw = function(){
+	e.preventDefault();
+	dragging = false;
+}
+
 canvas.addEventListener('mousemove', putPoint);
 canvas.addEventListener('mousedown', startDraw);
 canvas.addEventListener('mouseup', stopDraw);
 
-canvas.addEventListener('touchmove', putPoint);
-canvas.addEventListener('touchstart', startDraw);
-canvas.addEventListener('touchend', stopDraw);
+canvas.addEventListener('touchmove', touchPutPoint);
+canvas.addEventListener('touchstart', touchStartDraw);
+canvas.addEventListener('touchend', touchStopDraw);
