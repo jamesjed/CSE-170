@@ -33,3 +33,6 @@ canvas.addEventListener('mousemove', putPoint);
 canvas.addEventListener('mousedown', startDraw);
 canvas.addEventListener('mouseup', stopDraw);
 
+canvas.addEventListener('touchmove', putPoint);
+canvas.addEventListener('touchstart', startDraw);
+canvas.addEventListener('touchend', stopDraw);
