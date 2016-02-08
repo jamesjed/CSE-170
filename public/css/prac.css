@@ -63,6 +63,7 @@ i{
 	border-left: solid 2px #EAEAEA;
 	border-right: solid 2px #EAEAEA; */
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+ border-radius:1px;
 }
 #contentText{
 	padding-left: 6px;
@@ -82,6 +83,7 @@ i{
 	background-color: #343456;
   	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
  	-webkit-appearance: none;
+ border-radius:1px;
 	/*
 	border-left: solid 2px #EAEAEA;
 	border-right: solid 2px #EAEAEA; */
@@ -92,6 +94,7 @@ i{
 	border-right: solid 2px #EAEAEA; */
   	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	-webkit-appearance: none;
+border-radius:1px;
 }
 #post{
 	margin-top: 2.5%;
