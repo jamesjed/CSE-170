@@ -7,28 +7,31 @@
     <link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
     <link rel="stylesheet" type="text/css" href="/public/css/prac.css">
     <link rel="stylesheet" type="text/css" href="/public/css/profile.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script type="text/javascript" src="/public/js/jquery_1.9.js"></script>
+    <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
     <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 </head>
     
 <body style="background-color: white">
 
-    <nav class="navbar navbar-default" role="navigation" style="background: white" id="mainNav">
-    	<div class="container-fluid">
-    		<a class="navbar-brand"> Invenire </a>
-    		<div id="search">
-    			<center>
-    				<form class="navbar-form navbar-input-group">
-
-						<input id= "searchBar" type="text" placeholder=" Search">
-
-					</form>
-				</center>
-    		</div>
-    		
-    	</div>
+    <nav class="navbar navbar-default" role="navigation" style="background-color: white">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand">Invenire</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-container">
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-container">
+                <ul class="nav navbar-nav">
+                    <li class="active" id="navListElement"><a href="#">Home</a></li>
+                    <li id="navListElement"><a href="#">About Us</a></li>
+                    <li id="navListElement"><a href="#">Contact Us</a></li>          
+                </ul>
+            </div>
+        </div>
     </nav>
+
 
     <div class="container-fluid" id="userInfo">
 		<div class="jumbotron" style = "background-color: white;">
@@ -39,7 +42,7 @@
 
 				<center>
 
-					<img src="http://www.officialpsds.com/images/stocks/Crystal-Square-stock3776-large.png" width="15%"class = "img-circle">
+					<img src="http://www.officialpsds.com/images/stocks/Crystal-Square-stock3776-large.png" width="15%"class = "img-circle img-responsive">
 					<h1 style="color: #343456"> TonaldDrump </h1> 
 					<p style="color: gray"> Have you tried turning it off and on again? </p>
 				</center>

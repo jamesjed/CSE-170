@@ -2,31 +2,36 @@
 
 	<head>
 		<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="/public/css/flat-ui.css">
+    	<link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
 		<link rel="stylesheet" type="text/css" href="/public/css/prac.css">
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+  		<script type="text/javascript" src="/public/js/jquery_1.9.js"></script>
+    	<script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
 		<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<head>
 
 	<body>
 
-        <nav class="navbar navbar-default" role="navigation" style="background: white" id="mainNav">
-        	<div class="container-fluid">
-        		<a class="navbar-brand"> Invenire </a>
-        		<div id="search">
-        			<form class="navbar-form navbar-input-group">
-        			<center>	
-    					<input id= "searchBar" type="text" placeholder=" Search">
-    				    <input class="btn btn-primary" type="button" name="login" value="Profile" style="float: right;"  onclick="window.location='./profile';"/>
-    				    <input class="btn btn-primary" type="submit" name="login" value="Categories" style="float: right;"/>
-        			</form>
-    				</center>
-
-        		</div>
-        		
-        	</div>
-        </nav>
+	    <nav class="navbar navbar-default" role="navigation" style="background-color: white">
+	        <div class="container">
+	            <div class="navbar-header">
+	                <a class="navbar-brand">Invenire</a>
+	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-container">
+	                </button>
+	            </div>
+	            <div class="collapse navbar-collapse" id="navbar-container">
+	            	<form class="navbar-form" role="search">
+	            		<div class = "form=group">
+    						<input id= "searchBar" type="text" placeholder=" Search">
+    					</div>
+    				</form>
+	                <ul class="nav navbar-nav navbar-right">
+	                    <li id="navListElement"><a href="#">Categories</a></li>
+	                    <li id="navListElement"><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>          
+	                </ul>
+	            </div>
+	        </div>
+	    </nav>
 
 		<div class="container " id="postDiv">
 			<div class="row" id="grid">
@@ -45,8 +50,6 @@
 					</div>
 					</a>
 				</div>
-
-
 
 				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 grid-item" id="post" id="titlebar">
 					<a id="postLink" href= "./discuss"> 
