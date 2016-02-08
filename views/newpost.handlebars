@@ -2,10 +2,11 @@
 
 	<head>
 		<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="/public/css/flat-ui.css">
+        <link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
 		<link rel="stylesheet" type="text/css" href="/public/css/prac.css">
         <link rel="stylesheet" type="text/css" href="/public/css/newpost.css">
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+        <script type="text/javascript" src="/public/js/jquery_1.9.js"></script>
+        <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
 		<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
         <!-- Text Editor -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -15,11 +16,22 @@
         
 	<body>
 
-        <nav class="navbar navbar-default" role="navigation" style="background: white" id="mainNav"> 
-        	<div class="container-fluid">
-        		<a class="navbar-brand" onclick="window.location='./sample';"> Invenire </a>
-        	</div>
-        </nav>
+    <nav class="navbar navbar-default" role="navigation" style="background-color: white">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand">Invenire</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-container">
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-container">
+                <ul class="nav navbar-nav">
+                   <!-- <li class="active" id="navListElement"><a href="#">Home</a></li>
+                    <li id="navListElement"><a href="#">About Us</a></li>
+                    <li id="navListElement"><a href="#">Contact Us</a></li> -->         
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 		<div class="container">
     
