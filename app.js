@@ -47,6 +47,10 @@ app.get('/liveView', function(req, res) {
     res.render("liveView", {layout: false});
 });
 
+app.get('/following', function(req, res) {
+	res.render("following", {layout: false});
+});
+
 // Listen on provided or default port =====================
 
 var port = process.env.PORT || 8080;
