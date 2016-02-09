@@ -3,57 +3,97 @@
 		<title>
 			Discover new ideas!
 		</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="/public/css/flat-ui.css">
+    	<link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
 		<link rel="stylesheet" type="text/css" href="/public/css/landing.css">
 		<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="/public/js/landing.js"></script>
-        
-        <!-- Bootstrap Core CSS -->
-        <link href="/public/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="/public/css/round-about.css" rel="stylesheet">
+	    <script type="text/javascript" src="/public/js/jquery_1.9.js"></script>
+	    <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
 
 	</head>
 	<body>
-		
-		<nav class= "navbar navbar-default navbar-fixed-top" id="landingBar">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#" style="color:white"> Invenire </a>
-				</div>
-				<ul class="nav navbar-nav">
-					<li class="active"><p class="navbar-text"><a href="#second" style="color:white">About</a></p></li>
-					<li class="active"><p class="navbar-text"><a href="#third" style="color:white">Features</a></p></li>
-					<li class="active"><p class="navbar-text"><a href="#theTeam" style="color:white">The Team</a></p></li>
-				</ul>
-			<div>
-		</nav> 
+
+<!--
+	    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: white">
+	        <div class="container-fluid">
+	            <div class="navbar-header">
+	                <a class="navbar-brand" href="#" style="color:#343456">Invenire</a>
+	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-container">
+	                	<span class="icon-bar"></span>
+	                </button>
+	            </div>
+	            <div class="collapse navbar-collapse" id="navbar-container">
+	                <ul class="nav navbar-nav">
+	                    <li id="navListElement"><a href="#second" style="color:#343456">About</a></li>
+	                    <li id="navListElement"><a href="#third" style="color: #343456">Features</a></li> 
+	                    <li id="navListElement"><a href="#theTeam" style="color: #343456">The Team</a></li>          
+	                </ul>
+	            </div>
+	        </div>
+	    </nav> -->
 
 		<div class="jumbotron" style="background-color: #2574a9;" id="first"> 
 			<div id="mainText">
 			<center>
 				<h1 style="color: white" id="mainTitle"> Invenire </h1> 
 				<p style="color: white; font-size: 1.5em;" id="largeCaption"> A new way to discover and discuss ideas! </p>
-				<span style="font-size: 2em; color: white;" class="glyphicon glyphicon-chevron-down" id="down"></span>
+				<!--<span style="font-size: 2em; color: white;" class="glyphicon glyphicon-chevron-down" id="down"></span> -->
 			</center>
 			<center>
 				<button type="button" class="btn btn-primary" id="outline" onclick="window.location='./sample';"><p>Start Here!</p></button>
 			</div>
 			</center>
 		</div>
+
+		<!-- 
+
 		<div class="container-fluid" id="second">
+			<div class="col-lg-12 col-md-12 col-sm-12">
 			<center>
-				<p id = "largeCaption" style="color: white"> About </h4>
+				<p id = "largeCaption" style="margin-top: 8vh; margin-bottom: 7v"> About </h4>
 			</center>
+			</div>
 		</div>
+
 		<div class="container-fluid" id="third" style="background-color: #ececec">
 			<center>
-				<p id = "largeCaption">Features</h4>
+				<p id = "largeCaption" style="margin-top: 8vh; margin-bottom: 7vh">Features</h4>
 			</center>
+				<div class = "col-lg-4 col-md-4 col-sm-12">
+					<center>
+						<img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
+					</center>
+                	<center><h3> Speak </h3></center>
+                    <center><h3><small>Web Developer</small></h3></center>
+
+                	<p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+				</div>
+
+				<div class = "col-lg-4 col-md-4 col-sm-12">
+					<center>
+						<img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
+					</center>
+                	<center><h3> Draw </h3></center>
+                    <center><h3><small>Web Developer</small></h3></center>
+                	</h3>
+                	<p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+				</div>
+
+				<div class = "col-lg-4 col-md-4 col-sm-12">
+					<center>
+						<img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
+					</center>
+                	<center><h3> Type </h3></center>
+                    <center><h3><small>Web Developer</small></h3></center>
+                	</h3>
+                	<p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+				</div>
 		</div>
+
+
 		<div class="container-fluid" id="getStarted">
 			<center>
 				<p id = "largeCaption" style="color: white"> Start your discovery of new ideas! </h4>
@@ -62,57 +102,50 @@
 				<button type="button" class="btn btn-primary" id="outline2">Start Here!</button>
 			</center>
 		</div>
-    
-            <!-- Meet the Team -->
+
+
 		<div class="container-fluid" id="theTeam">
 			<center>
-            <div class="col-lg-12">
-                <h2 class="page-header">Meet the Team</h2>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>Harrison
-                    <small>Web Developer</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>James
-                    <small>Web Developer</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>Kann
-                    <small>Web Developer</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
+				<p id = "largeCaption" style="margin-top: 8vh; margin-bottom: 7vh"> Meet the Team </h4>
 			</center>
+
+				<div class = "col-lg-4 col-md-4 col-sm-12">
+					<center>
+						<img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
+					</center>
+                	<center><h3>Harrison Wang </h3></center>
+                    <center><h3><small>Web Developer</small></h3></center>
+
+                	<p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+				</div>
+
+				<div class = "col-lg-4 col-md-4 col-sm-12">
+					<center>
+						<img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
+					</center>
+                	<center><h3>James Natanauan </h3></center>
+                    <center><h3><small>Web Developer</small></h3></center>
+                	</h3>
+                	<p>James is a 4th year computer science student at UCSD who is passionate about HCI, 3D computer graphics, and web development!</p>
+				</div>
+
+				<div class = "col-lg-4 col-md-4 col-sm-12">
+					<center>
+						<img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
+					</center>
+                	<center><h3>Kann Chea </h3></center>
+                    <center><h3><small>Web Developer</small></h3></center>
+                	</h3>
+                	<p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+				</div>
+
+
 		</div>
-    
 		<div class="container-fluid" id="footer">
 			<center>
 			</center>
 		</div>
+-->
+
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

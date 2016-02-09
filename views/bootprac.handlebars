@@ -2,64 +2,68 @@
 
 	<head>
 		<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="/public/css/flat-ui.css">
+    	<link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
 		<link rel="stylesheet" type="text/css" href="/public/css/prac.css">
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+  		<script type="text/javascript" src="/public/js/jquery_1.9.js"></script>
+    	<script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
 		<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<head>
 
 	<body>
 
-        <nav class="navbar navbar-default" role="navigation" style="background: white" id="mainNav">
-        	<div class="container-fluid">
-        		<a class="navbar-brand"> Invenire </a>
-        		<div id="search">
-        			<form class="navbar-form navbar-input-group">
-        			<center>	
-    					<input id= "searchBar" type="text" placeholder=" Search">
-    				    <input class="btn btn-primary" type="submit" name="login" value="Profile" style="float: right;"/>
-    				    <input class="btn btn-primary" type="submit" name="login" value="Categories" style="float: right;"/>
-        			</form>
-    				</center>
-
-        		</div>
-        		
-
-        		
-        	</div>
-        </nav>
+	    <nav class="navbar navbar-default" role="navigation" style="background-color: white">
+	        <div class="container">
+	            <div class="navbar-header">
+	                <a class="navbar-brand">Invenire</a>
+	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-container">
+	                </button>
+	            </div>
+	            <div class="collapse navbar-collapse" id="navbar-container">
+	            	<form class="navbar-form" role="search">
+	            		<div class = "form=group">
+    						<input id= "searchBar" type="text" placeholder=" Search"></input>
+	                		<ul class="nav navbar-nav navbar-right">
+	                    		<li id="navListElement"><a href="#">Categories</a></li>
+	                    		<li id="navListElement"><a href="./profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>          
+	                		</ul>
+    					</div>
+    				</form>
+	            </div>
+	        </div>
+	    </nav>
 
 		<div class="container " id="postDiv">
 			<div class="row" id="grid">
 
 
 				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 centered grid-item" id="post">
-					
-					<img id="picture" src="http://www.givingbacksmiles.com/wp-content/uploads/2012/06/NAT-GEO-Ad-Tiger.jpg">
-
-					<div class="container-fluid" style="background-color: #343456" >
-						<h4 style="color:white ">Column 1</h4>
-						<p style="color: white"> This is a subtitle<p>
+					<a id="postLink" href= "./discuss"> 
+					<div id="imageborder">
+						<img id="picture" src="http://www.givingbacksmiles.com/wp-content/uploads/2012/06/NAT-GEO-Ad-Tiger.jpg">
+					</div>
+					<div class="container-fluid" id="titleBox">
+						<h4 style="color:white " id="topicTitle">Column 1</h4>
+						<p style="color: white" id="subtitle"> This is a subtitle<p>
 					</div>
 					<div id="content" class="container-fluid">
-						<p>The purpose of life is to live it, to taste experience to the utmost, to reach out eagerly and without fear for newer and richer experience.</p>
+						<p id="contentText">The purpose of life is to live it, to taste experience to the utmost, to reach out eagerly and without fear for newer and richer experience.</p>
 					</div>
-
+					</a>
 				</div>
 
-
-
 				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 grid-item" id="post" id="titlebar">
-
+					<a id="postLink" href= "./discuss"> 
+					<div id="imageborder">
 					<img id="picture" src="http://blog.eyewire.org/wp-content/uploads/2013/12/the-human-eye.jpg">
-
-					<div class="container-fluid" style="background-color: #343456">
-						<h4 style="color:white ">Column 2</h4>
+					</div>
+					<div class="container-fluid" id="titleBox">
+						<h4 style="color:white " id="topicTitle">Column 2</h4>
 					</div>
 					<div id="content" class="container-fluid">
-						<p>Compassion is the sometimes fatal capacity for feeling what it is like to live inside somebody else's skin. It's the knowledge that there can never really be any peace and joy for me until there is peace and joy finally for you too.</p>
+						<p id="contentText">Compassion is the sometimes fatal capacity for feeling what it is like to live inside somebody else's skin. It's the knowledge that there can never really be any peace and joy for me until there is peace and joy finally for you too.</p>
 					</div>
-					
+					</a>					
 				</div>
 
 
@@ -67,47 +71,50 @@
 
 
 				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 grid-item" id="post" id="titlebar">
-
+					<a id="postLink" href= "./discuss"> 
+					<div id="imageborder">
 					<img id="picture" src="http://scienceblogs.com/lifelines/files/2014/01/13243547332073393725diving-with-great-white-sharks.jpg">
-
-					<div class="container-fluid" style="background-color: #343456">
-						<h4 style="color:white ">Column 3</h4>
+					</div>
+					<div class="container-fluid" id="titleBox">
+						<h4 style="color:white " id="topicTitle">Column 3</h4>
 					</div>
 					<div id="content" class="container-fluid">
-						<p>Compassion is the sometimes fatal capacity for feeling what it is like to live inside somebody else's skin. It's the knowledge that there can never really be any peace and joy for me until there is peace and joy finally for you too.</p>
+						<p id="contentText">Compassion is the sometimes fatal capacity for feeling what it is like to live inside somebody else's skin. It's the knowledge that there can never really be any peace and joy for me until there is peace and joy finally for you too.</p>
 					</div>
-
+					</a>
 				</div>
 
 
 				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 centered grid-item" id="post" id="titlebar">
 					
-					
+					<a id="postLink" href= "./preview"> 	
+					<div id="imageborder">				
 					<img id="picture" src="http://www.givingbacksmiles.com/wp-content/uploads/2012/06/NAT-GEO-Ad-Tiger.jpg">
-
-					<div class="container-fluid" style="background-color: #343456" >
-						<h4 style="color:white ">Column 1</h4>
+					</div>
+					<div class="container-fluid" id="titleBox">
+						<h4 style="color:white " id="topicTitle">Column 1</h4>
 						<p style="color: white"> This is a subtitle<p>
 					</div>
 					<div id="content" class="container-fluid">
-						<p>The purpose of life is to live it, to taste experience to the utmost, to reach out eagerly and without fear for newer and richer experience.</p>
+						<p id="contentText">The purpose of life is to live it, to taste experience to the utmost, to reach out eagerly and without fear for newer and richer experience.</p>
 					</div>
-
+					</a>
 				</div>
 
 
 
 				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 grid-item" id="post" id="titlebar">
-
+					<a id="postLink" href= "./preview"> 
+					<div id="imageborder">
 					<img id="picture" src="http://blog.eyewire.org/wp-content/uploads/2013/12/the-human-eye.jpg">
-
-					<div class="container-fluid" style="background-color: #343456">
-						<h4 style="color:white ">Column 2</h4>
+					</div>
+					<div class="container-fluid" id="titleBox">
+						<h4 style="color:white " id="topicTitle">Column 2</h4>
 					</div>
 					<div id="content" class="container-fluid">
-						<p>Compassion is the sometimes fatal capacity for feeling what it is like to live inside somebody else's skin. It's the knowledge that there can never really be any peace and joy for me until there is peace and joy finally for you too.</p>
+						<p id="contentText">Compassion is the sometimes fatal capacity for feeling what it is like to live inside somebody else's skin. It's the knowledge that there can never really be any peace and joy for me until there is peace and joy finally for you too.</p>
 					</div>
-					
+					</a>					
 				</div>
 
 
@@ -115,29 +122,31 @@
 
 
 				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 grid-item" id="post" id="titlebar">
-
+					<a id="postLink" href= "./preview"> 
+					<div id="imageborder">
 					<img id="picture" src="http://scienceblogs.com/lifelines/files/2014/01/13243547332073393725diving-with-great-white-sharks.jpg">
-
-					<div class="container-fluid" style="background-color: #343456">
-						<h4 style="color:white ">Column 3</h4>
+					</div>
+					<div class="container-fluid" style="background-color: #343456" id="titleBox">
+						<h4 style="color:white " id="topicTitle">Column 3</h4>
 					</div>
 					<div id="content" class="container-fluid">
-						<p>Compassion is the sometimes fatal capacity for feeling what it is like to live inside somebody else's skin. It's the knowledge that there can never really be any peace and joy for me until there is peace and joy finally for you too.</p>
+						<p id="contentText">Compassion is the sometimes fatal capacity for feeling what it is like to live inside somebody else's skin. It's the knowledge that there can never really be any peace and joy for me until there is peace and joy finally for you too.</p>
 					</div>
-
+					</a>
 				</div>
 
 				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 grid-item" id="post" id="titlebar">
-
+					<a id="postLink" href= "./preview"> 
+					<div id="imageborder">
 					<img id="picture" src="http://scienceblogs.com/lifelines/files/2014/01/13243547332073393725diving-with-great-white-sharks.jpg">
-
-					<div class="container-fluid" style="background-color: #343456">
-						<h4 style="color:white ">Column 3</h4>
+					</div>
+					<div class="container-fluid" style="background-color: #343456" id="titleBox">
+						<h4 style="color:white " id="topicTitle">Column 3</h4>
 					</div>
 					<div id="content" class="container-fluid">
-						<p>Compassion is the sometimes fatal capacity for feeling what it is like to live inside somebody else's skin. It's the knowledge that there can never really be any peace and joy for me until there is peace and joy finally for you too.</p>
+						<p id="contentText">Compassion is the sometimes fatal capacity for feeling what it is like to live inside somebody else's skin. It's the knowledge that there can never really be any peace and joy for me until there is peace and joy finally for you too.</p>
 					</div>
-
+					</a>
 				</div>
 
 

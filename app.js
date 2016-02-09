@@ -35,6 +35,21 @@ app.get('/profile', function(req, res) {
     res.render("profile", {layout: false});
 });
 
+app.get('/discuss', function(req, res) {
+    res.render("discussion", {layout: false});
+});
+
+app.get('/preview', function(req, res) {
+    res.render("preview", {layout: false});
+});
+
+app.get('/liveView', function(req, res) {
+    res.render("liveView", {layout: false});
+});
+
+app.get('/following', function(req, res) {
+	res.render("following", {layout: false});
+});
 
 // Listen on provided or default port =====================
 
