@@ -23,12 +23,14 @@
                 </button>
             </div>
             <div class="collapse navbar-collapse" id="navbar-container">
-                <ul class="nav navbar-nav">
-                   <!-- <li class="active" id="navListElement"><a href="#">Home</a></li>
-                    <li id="navListElement"><a href="#">About Us</a></li>
-                    <li id="navListElement"><a href="#">Contact Us</a></li> -->         
-                </ul>
-            </div>
+	            	<form class="navbar-form" role="search">
+	            		<div class = "form=group">
+	                		<ul class="nav navbar-nav navbar-right">
+	                    		<li id="navListElement"><a href="./profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>          
+	                		</ul>
+    					</div>
+    				</form>
+	       </div>
         </div>
     </nav>
 
@@ -71,8 +73,10 @@
                 
                 </textarea>
             </fieldset>
-  
+            
             <input class="btn btn-primary" type="button" name="login" value="Post" style="float: right;"  onclick="window.location='./discuss';"/>
+            
+            <input class="btn btn-primary" type="button" name="login" value="Save" style="float: right; margin-right: 15px;"/>
 
         </div>
 

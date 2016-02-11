@@ -41,12 +41,30 @@
 }
 #outline{
 	background: none;
-	padding: 12px 22px;
+	padding: 5px; /* 12px 22px; */
 	border: 2px solid #ffffff;
 	color: #ffffff;
 	height: 10%;
 	width: 15%;
-
+    
+}
+#outline0{
+	background: none;
+	padding: 5;
+	border: 2px solid #ffffff;
+	color: #ffffff;
+	height: 10%;
+	width: 15%;
+    line-height: inherit;
+}
+#outline1{
+	background: none;
+	padding: 5px;
+	border: 2px solid #ffffff;
+	color: #ffffff;
+	height: 10%;
+	width: 15%;
+    line-height: inherit;
 }
 #outline2{
 	background: none;
