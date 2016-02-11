@@ -43,7 +43,31 @@
 				<!--<span style="font-size: 2em; color: white;" class="glyphicon glyphicon-chevron-down" id="down"></span> -->
 			</center>
 			<center>
-				<button type="button" class="btn btn-primary" id="outline" onclick="window.location='./sample';"><p>Start Here!</p></button>
+                <!------ LOGIN -------->
+                <button type="button" class="btn btn-primary" id="outline0" data-toggle="modal" data-target="#login-modal"><p>Login</p></button>
+                
+                <!------ LOGIN MODAL -------->
+                <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Welcome!</h1><br>
+				  <form>
+					<input type="text" name="user" placeholder="Username">
+					<input type="password" name="pass" placeholder="Password">
+					<input id="submitLogin" type="submit" name="login" class="login loginmodal-submit" value="Login">
+				  </form>
+					
+				  <div class="login-help">
+					<a href="#">Register</a> - <a href="#">Forgot Password</a>
+				  </div>
+				</div>
+			</div>
+		  </div>
+                <!------ Sign Up -------->
+                <button type="button" class="btn btn-primary" id="outline1"><p>Sign Up</p></button>
+                
+                <!------ Browse as guest -------->
+                <p style="padding: 10px; color: white; font-size: 12pt;" onclick="window.location='./sample';">Browse as guest . . .</p>
 			</div>
 			</center>
 		</div>

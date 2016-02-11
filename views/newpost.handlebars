@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		
 	<head>
-        
+
 	<body>
 
     <nav class="navbar navbar-default" role="navigation" style="background-color: white">
@@ -23,18 +23,18 @@
                 </button>
             </div>
             <div class="collapse navbar-collapse" id="navbar-container">
-                <ul class="nav navbar-nav">
-                   <!-- <li class="active" id="navListElement"><a href="#">Home</a></li>
-                    <li id="navListElement"><a href="#">About Us</a></li>
-                    <li id="navListElement"><a href="#">Contact Us</a></li> -->         
-                </ul>
-            </div>
+	            	<form class="navbar-form" role="search">
+	            		<div class = "form=group">
+	                		<ul class="nav navbar-nav navbar-right">
+	                    		<li id="navListElement"><a href="./profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>          
+	                		</ul>
+    					</div>
+    				</form>
+	       </div>
         </div>
     </nav>
 
 		<div class="container">
-    
-        <form>
             
             <!-- Title box -->
             <fieldset class="form-group">
@@ -61,7 +61,6 @@
                     <i class="fa fa-font"></i>
                     <i class="fa fa-strikethrough"></i>
                     <i class="fa fa-align-left"></i>
-                    <i class="fa fa-align-center"></i>
                     <i class="fa fa-align-justify"></i>
                     <i class="fa fa-align-right"></i>
                     <i class="fa fa-list"></i>
@@ -73,9 +72,11 @@
                 
                 </textarea>
             </fieldset>
-  
+            
             <input class="btn btn-primary" type="button" name="login" value="Post" style="float: right;"  onclick="window.location='./discuss';"/>
-        </form>
+            
+            <input class="btn btn-primary" type="button" name="login" value="Save" style="float: right; margin-right: 15px;"/>
+
         </div>
 
 	</body>

@@ -78,3 +78,15 @@ a{
   text-decoration: none;
   color: black;
 }
+
+#newPost{
+	position: fixed;
+	right: 2%;
+	bottom: 5%;
+	width: 70px;
+	height: 70px;
+	border-radius: 200%;
+	border: none;
+	white-space: normal;
+  	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
