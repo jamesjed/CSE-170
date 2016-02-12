@@ -74,8 +74,25 @@
 
 			<div class="row" id="grid">
 
-
+                <!-- data from data.json -->
+                {{#each friends}}
 				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 centered grid-item" id="post">
+					
+					<img id="picture" src="{{imageURL}}">
+
+					<div class="container-fluid" style="background-color: #343456" >
+						<h4 style="color:white ">{{column}}</h4>
+						<p style="color: white">{{subTitle}}<p>
+					</div>
+					<div id="content" class="container-fluid">
+						<p>{{description}}</p>
+					</div>
+
+				</div>
+                {{/each}}
+                <!-- End -->
+                
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 centered grid-item" id="post">
 					
 					<img id="picture" src="http://www.givingbacksmiles.com/wp-content/uploads/2012/06/NAT-GEO-Ad-Tiger.jpg">
 
