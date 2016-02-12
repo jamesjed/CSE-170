@@ -59,6 +59,7 @@ i{
 #content{
 	/*background-color: white;*/
 	padding-top: 1px;
+
 	/*
 	border-bottom: solid 2px #EAEAEA;
 	border-left: solid 2px #EAEAEA;
@@ -70,6 +71,7 @@ i{
 	padding-right: 6px;
 	font-size: 14px;
 	color: white;
+	padding-bottom: 7px;
 	-webkit-appearance: none;
 }
 #topicTitle{
