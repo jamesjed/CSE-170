@@ -2,7 +2,7 @@ h4{
 	word-wrap: break-word;
 }
 body{
-	background-color: #fafafa;
+	background-color: #f2f2f2;
 	padding-top: 60px;
 }
 
@@ -57,23 +57,24 @@ i{
 	max-width: 100%;
 }
 #content{
-	background-color: white;
-	padding-top: 15px;
+	/*background-color: white;*/
+	padding-top: 1px;
 	/*
 	border-bottom: solid 2px #EAEAEA;
 	border-left: solid 2px #EAEAEA;
 	border-right: solid 2px #EAEAEA; */
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
  border-radius:1px;
 }
 #contentText{
 	padding-left: 6px;
 	padding-right: 6px;
-	font-size: 16px;
+	font-size: 14px;
+	color: white;
 	-webkit-appearance: none;
 }
 #topicTitle{
 	padding-left: 6px;	
+	font-family: Arial;
 }
 #subtitle{
 	padding-left: 8px;
@@ -82,8 +83,6 @@ i{
 
 }
 #titleBox{
-	background-color: #343456;
-  	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
  	-webkit-appearance: none;
  	border-radius:1px;
 	/*
@@ -94,12 +93,11 @@ i{
 	/*
 	border-left: solid 2px #EAEAEA;
 	border-right: solid 2px #EAEAEA; */
-  	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	-webkit-appearance: none;
 border-radius:1px;
 }
 #post{
-	margin-top: 2.5%;
+	margin-top: 1.3%;
 }
 
 a{
@@ -107,5 +105,12 @@ a{
 	color: black;
 }
 
+.col {
+  padding-right:8px;
+  padding-left:8px;
+  padding-top: 1px;
+}
 
+.navbar{
 
+}
