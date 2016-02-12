@@ -12,7 +12,7 @@
 
 </head>
     
-<body style="background-color: white">
+<body style="background-color: #F2F2F2;">
 
     <nav class="navbar navbar-default" role="navigation" style="background-color: white">
         <div class="container">
@@ -35,12 +35,7 @@
     <div class="container-fluid" id="userInfo">
 		<div class="jumbotron" style = "background-color: white;">
 
-			<center>
-				<button type="button" class="btn btn-sm btn-primary" id="followButton">Follow</button>
-			</center>
-
 				<center>
-
 					<img src="http://www.officialpsds.com/images/stocks/Crystal-Square-stock3776-large.png" width="15%"class = "img-circle img-responsive">
 					<h1 style="color: #343456"> TonaldDrump </h1> 
 					<p style="color: gray"> Have you tried turning it off and on again? </p>
@@ -57,7 +52,10 @@
 				</div>
 			</nav>
 
-
+			<center>
+				<button type="button" class="btn btn-sm btn-primary" id="followButton">Follow</button>
+			</center>
+			
 			<center>
 				<span style="font-size: 2em; color: #343456; margin-top: 7vh" class="glyphicon glyphicon-chevron-down" id="down"></span>
 			</center>
@@ -92,6 +90,7 @@
                 {{/each}}
                 <!-- End -->
                 
+         
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 centered grid-item" id="post">
 					
 					<img id="picture" src="http://www.givingbacksmiles.com/wp-content/uploads/2012/06/NAT-GEO-Ad-Tiger.jpg">
@@ -120,8 +119,6 @@
 					</div>
 					
 				</div>
-
-
 
 
 
@@ -170,9 +167,6 @@
 				</div>
 
 
-
-
-
 				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 grid-item" id="post" id="titlebar">
 
 					<img id="picture" src="http://scienceblogs.com/lifelines/files/2014/01/13243547332073393725diving-with-great-white-sharks.jpg">
@@ -210,7 +204,7 @@
 						<p>Compassion is the sometimes fatal capacity for feeling what it is like to live inside somebody else's skin. It's the knowledge that there can never really be any peace and joy for me until there is peace and joy finally for you too.</p>
 					</div>
 					
-				</div>
+				</div> 
 
 
 				<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
@@ -223,7 +217,6 @@
 				</script>
 			</div>
     </div>
-    <a id="newPost" class="btn btn-success" onclick="window.location='./newpost';"> New Post </a>
     
 </body>
 </html>
