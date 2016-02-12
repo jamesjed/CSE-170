@@ -25,18 +25,18 @@ prevPointMouse.x = 1;
 // to draw data on your own screen
 socket.on('mouseReceive', function(data){
 	//console.log(data.x + " " + data.y);
+
+	/*
 	context.beginPath();
 
 	context.lineTo(data.x, data.y);
 	context.stroke();
-	context.beginPath();
+	context.beginPath(); */
 
 	context.arc(data.x, data.y, data.radius, data.start, data.end);
 	context.fill();
 	context.beginPath();
-	prevPointMouse.x = data.x;
-	prevPointMouse.y = data.y;
-	context.moveTo(prevPointMouse.x, prevPointMouse.y);
+
 });
 
 var putPoint = function(e){
@@ -80,16 +80,16 @@ socket.on('touchReceive', function(data){
 	//console.log(data.x + " " + data.y);
 	//context.beginPath();
 
+	/*
+
 	context.lineTo(data.x, data.y);
 	context.stroke();
-	context.beginPath();
+	context.beginPath(); */
 
 	context.arc(data.x, data.y, data.radius, data.start, data.end);
 	context.fill();
 	context.beginPath();
-	prevPointTouch.x = data.x;
-	prevPointTouch.y = data.y;
-	context.moveTo(prevPointTouch.x, prevPointTouch.y);
+
 });
 
 var touchPutPoint = function(e){
