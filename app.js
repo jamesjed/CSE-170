@@ -21,8 +21,11 @@ io.sockets.on('connection', function(socket){
 	socket.on('send message', function(data){
 		io.sockets.emit('new message', data);
 	});
-	socket.on('dummy', function(data){
-		io.sockets.emit("new dummy", data);
+	socket.on('mouseDraw', function(data){
+		io.sockets.emit("mouseReceive", data);
+	});
+	socket.on('touchDraw', function(data){
+		io.sockets.emit("touchReceive", data);
 	});
 	socket.on('mouse position', function(data){
 		socket.broadcast.emit("send position", data);

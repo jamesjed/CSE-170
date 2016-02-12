@@ -14,29 +14,41 @@ context.lineWidth = radius*2;
 var socket = io.connect();
 var $whiteboard = $('#whiteboard');
 
-socket.on('new dummy', function(data){
-	console.log(data);
+socket.on('mouseReceive', function(data){
+	console.log(data.x + " " + data.y);
+	context.arc(data.x, data.y, data.radius, data.start, data.end);
+	context.fill();
+	context.beginPath();
+	context.moveTo(data.x, data.y);
+	context.lineTo(data.x, data.y);
+	context.stroke();
+	context.beginPath();
 });
 
+
+
+/*
 socket.on('mouse position', function(data){
 	console.log(data.mousex + " " + data.mousey);
-	context2.arc(data.mousex, data.mousey, radius, 0, 2 * Math.PI);
-}); 
+}); */
 
 var putPoint = function(e){
 	if(dragging){
 		context.lineTo(e.clientX, e.clientY);
 		context.stroke();
+		var dummy = "Circle drawn";
+		var data = {
+			x: e.clientX,
+			y: e.clientY,
+			radius: radius,
+			start: 0,
+			end: 2 * Math.PI
+		}
+		socket.emit('mouseDraw', data);
 		context.beginPath();
 	// Offset x and y are the coordinates of the mouse relative
 	// to the browser window
 		context.arc(e.clientX, e.clientY, radius, 0, 2 * Math.PI);
-		var dummy = "Circle drawn";
-		var data = {
-			x: e.clientX,
-			y: e.clientY
-		}
-		socket.emit('dummy', dummy);
 		context.fill();
 		context.beginPath();
 		context.moveTo(e.clientX, e.clientY);
@@ -61,23 +73,37 @@ var stopDraw = function(){
 	context.beginPath();
 }
 
+socket.on('touchReceive', function(data){
+	console.log(data.x + " " + data.y);
+	context.arc(data.x, data.y, data.radius, data.start, data.end);
+	context.fill();
+	context.beginPath();
+	context.moveTo(data.x, data.y);
+	context.lineTo(data.x, data.y);
+	context.stroke();
+	context.beginPath();
+});
+
 var touchPutPoint = function(e){
 	e.preventDefault();
 	var touch = e.touches[0];
 	if(dragging){
 		context.lineTo(touch.pageX, touch.pageY);
 		context.stroke();
-		context.beginPath();
-
-	// Offset x and y are the coordinates of the mouse relative
-	// to the browser window
-		context.arc(touch.pageX, touch.pageY, radius, 0, 2 * Math.PI);
 		var dummy = "Circle drawn";
 		var data = {
 			x: touch.pageX,
-			y: touch.pageY
+			y: touch.pageY,
+			radius: radius,
+			start: 0,
+			end: 2 * Math.PI
 		}
-		socket.emit('dummy', dummy);
+		context.beginPath();
+
+		// Offset x and y are the coordinates of the mouse relative
+		// to the browser window
+		context.arc(touch.pageX, touch.pageY, radius, 0, 2 * Math.PI);
+		socket.emit('touchDraw', data);
 		context.fill();
 		context.beginPath();
 		context.moveTo(touch.pageX, touch.pageY);
