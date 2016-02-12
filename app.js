@@ -3,8 +3,8 @@ var exphbs = require("express-handlebars");
 
 // Initialize express object
 var app = express();
-var sample = require('./public/js/sample');
-var profile = require('./public/js/newpost');
+var sample = require('./routes/sample');
+var profile = require('./routes/newpost');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -54,7 +54,7 @@ app.get('/following', function(req, res) {
 });
 
 app.get('/sample', sample.view);
-app.get('/newpost', newpost.addPost);
+app.get('./newpost', newpost.addPost);
 // Listen on provided or default port =====================
 
 var port = process.env.PORT || 8080;

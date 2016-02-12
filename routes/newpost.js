@@ -1,11 +1,11 @@
-var data = require("~/data.json");
+var data = require("../data.json");
 
-export.addPost = function(req, res) {
+exports.addPost = function(req, res) {
     var newPost = {
         imageURL: req.query.imageURL,
         column: req.query.column,
         subTitle: req.query.subTitle,
-        description: req.query.description;
+        description: req.query.description
     };
     
     data["ideas"].push(newPost);
