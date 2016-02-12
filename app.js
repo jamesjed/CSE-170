@@ -3,6 +3,8 @@ var exphbs = require("express-handlebars");
 
 // Initialize express object
 var app = express();
+var sample = require('./routes/sample');
+var profile = require('./routes/newpost');
 
 // Listen on provided or default port =====================
 
@@ -77,4 +79,10 @@ app.get('/following', function(req, res) {
 app.get('/chat', function(req, res){
 	res.render("socket_test", {layout: false});
 });
+
+/*
+app.get('/sample', sample.view);
+app.get('./profile', profile.addPost);
+*/
+
 

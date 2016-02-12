@@ -10,20 +10,6 @@
     <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
     <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-    <style>
-    /*
-        .jumbotron {
-            position: relative;
-            background: pink url("jumbotron-bg.png") center center;
-            width: 100%;
-            height: 200px;
-            background-size: cover;
-            overflow: hidden;
-        } */
-    </style>
-
 </head>
     
 <body style="background-color: white">
@@ -37,7 +23,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-container">
                 <ul class="nav navbar-nav">
-                    <li class="active" id="navListElement"><a href="#">Home</a></li>
+                    <li class="active" id="navListElement"><a href="/sample">Home</a></li>
                     <li id="navListElement"><a href="#">About Us</a></li>
                     <li id="navListElement"><a href="#">Contact Us</a></li>          
                 </ul>
@@ -88,8 +74,25 @@
 
 			<div class="row" id="grid">
 
-
+                <!-- data from data.json -->
+                {{#each friends}}
 				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 centered grid-item" id="post">
+					
+					<img id="picture" src="{{imageURL}}">
+
+					<div class="container-fluid" style="background-color: #343456" >
+						<h4 style="color:white ">{{column}}</h4>
+						<p style="color: white">{{subTitle}}<p>
+					</div>
+					<div id="content" class="container-fluid">
+						<p>{{description}}</p>
+					</div>
+
+				</div>
+                {{/each}}
+                <!-- End -->
+                
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 centered grid-item" id="post">
 					
 					<img id="picture" src="http://www.givingbacksmiles.com/wp-content/uploads/2012/06/NAT-GEO-Ad-Tiger.jpg">
 
@@ -220,6 +223,7 @@
 				</script>
 			</div>
     </div>
-
+    <a id="newPost" class="btn btn-success" onclick="window.location='./newpost';"> New Post </a>
+    
 </body>
 </html>
