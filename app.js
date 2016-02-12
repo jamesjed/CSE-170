@@ -85,7 +85,9 @@ app.get('/chat', function(req, res){
 
 /*
 app.get('/sample', sample.view);
+<<<<<<< HEAD
 app.get('./profile', profile.addPost);
 */
+
 
 

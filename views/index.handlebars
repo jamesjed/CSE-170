@@ -54,7 +54,7 @@
 				  <form>
 					<input type="text" name="user" placeholder="Username">
 					<input type="password" name="pass" placeholder="Password">
-					<input id="submitLogin" type="submit" name="login" class="login loginmodal-submit" value="Login">
+					<input id="submitLogin" onclick="window.location='./sample';" name="login" class="login loginmodal-submit" value="Login" >
 				  </form>
 					
 				  <div class="login-help">
@@ -64,7 +64,24 @@
 			</div>
 		  </div>
                 <!------ Sign Up -------->
-                <button type="button" class="btn btn-SignUp-outline" id="outline1">&nbsp;&nbsp;Sign Up&nbsp;&nbsp;</button>
+                <button type="button" class="btn btn-SignUp-outline" id="outline1" data-toggle="modal" data-target="#signup-modal">&nbsp;&nbsp;Sign Up&nbsp;&nbsp;</button>
+                
+                <!------ SignUp MODAL -------->
+                <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Welcome!</h1><br>
+				  <form>
+					<input type="text" name="user" placeholder="Username">
+                    <input type="text" name="email" placeholder="Email">  
+					<input type="password" name="pass" placeholder="Password">
+                    <input type="password" name="pass" placeholder="Confirm Password">  
+					<input id="submitLogin" onclick="window.location='./sample';" name="login" class="login loginmodal-submit" value="Create Account" >
+				  </form>
+					
+				</div>
+			</div>
+		  </div>
                 
                 <!------ Browse as guest -------->
                 <p style="padding: 10px; color: white; font-size: 12pt;" onclick="window.location='./sample';">Browse as guest . . .</p>
