@@ -54,7 +54,7 @@ app.get('/following', function(req, res) {
 });
 
 app.get('/sample', sample.view);
-app.get('./newpost', newpost.addPost);
+app.get('./profile', profile.addPost);
 // Listen on provided or default port =====================
 
 var port = process.env.PORT || 8080;
