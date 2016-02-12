@@ -4,8 +4,8 @@ export.addPost = function(req, res) {
     var newPost = {
         imageURL: req.query.imageURL,
         column: req.query.column,
-        subTitle: req.query.subTitle;
-        description: req.query.description
+        subTitle: req.query.subTitle,
+        description: req.query.description;
     };
     
     data["ideas"].push(newPost);

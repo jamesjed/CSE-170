@@ -3,8 +3,8 @@ var exphbs = require("express-handlebars");
 
 // Initialize express object
 var app = express();
-var sample = require(./public/js/sample);
-var profile = require(./public/js/newpost);
+var sample = require('./public/js/sample');
+var profile = require('./public/js/newpost');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
