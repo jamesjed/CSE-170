@@ -5,6 +5,7 @@ var context2 = canvas.getContext("2d");
 
 var radius = 3;
 var dragging = false;
+var endEmit = false;
 
 context.canvas.width  = (window.innerWidth)*.9;
 context.canvas.height = (window.innerHeight)*.7;
@@ -14,29 +15,35 @@ context.lineWidth = radius*2;
 var socket = io.connect();
 var $whiteboard = $('#whiteboard');
 
+var prevPointMouse = {};
+
+var prevPointTouch = {};
+
+prevPointMouse.x = 1;
+
+// Receive data from other user drawings and use the data
+// to draw data on your own screen
 socket.on('mouseReceive', function(data){
-	console.log(data.x + " " + data.y);
-	context.arc(data.x, data.y, data.radius, data.start, data.end);
-	context.fill();
+	//console.log(data.x + " " + data.y);
 	context.beginPath();
-	context.moveTo(data.x, data.y);
+
 	context.lineTo(data.x, data.y);
 	context.stroke();
 	context.beginPath();
+
+	context.arc(data.x, data.y, data.radius, data.start, data.end);
+	context.fill();
+	context.beginPath();
+	prevPointMouse.x = data.x;
+	prevPointMouse.y = data.y;
+	context.moveTo(prevPointMouse.x, prevPointMouse.y);
 });
-
-
-
-/*
-socket.on('mouse position', function(data){
-	console.log(data.mousex + " " + data.mousey);
-}); */
 
 var putPoint = function(e){
 	if(dragging){
 		context.lineTo(e.clientX, e.clientY);
 		context.stroke();
-		var dummy = "Circle drawn";
+
 		var data = {
 			x: e.clientX,
 			y: e.clientY,
@@ -46,42 +53,43 @@ var putPoint = function(e){
 		}
 		socket.emit('mouseDraw', data);
 		context.beginPath();
-	// Offset x and y are the coordinates of the mouse relative
-	// to the browser window
+
+		// Offset x and y are the coordinates of the mouse relative
+		// to the browser window
 		context.arc(e.clientX, e.clientY, radius, 0, 2 * Math.PI);
 		context.fill();
 		context.beginPath();
 		context.moveTo(e.clientX, e.clientY);
 	}
-	//console.log("Mouse x: " + e.clientX + " Mouse y: " + e.clientY );
-	/*
-	var mousePos = {
-		mousex: e.clientX,
-		mousey: e.clientY
-	} */
 
-	//socket.emit('mouse position', mousePos);
 }
 
 var startDraw = function(e){
 	dragging = true;
+	endEmit = true;
 	putPoint(e);
 }
 
 var stopDraw = function(){
 	dragging = false;
+	endEmit = false;
 	context.beginPath();
 }
 
 socket.on('touchReceive', function(data){
-	console.log(data.x + " " + data.y);
-	context.arc(data.x, data.y, data.radius, data.start, data.end);
-	context.fill();
-	context.beginPath();
-	context.moveTo(data.x, data.y);
+	//console.log(data.x + " " + data.y);
+	//context.beginPath();
+
 	context.lineTo(data.x, data.y);
 	context.stroke();
 	context.beginPath();
+
+	context.arc(data.x, data.y, data.radius, data.start, data.end);
+	context.fill();
+	context.beginPath();
+	prevPointTouch.x = data.x;
+	prevPointTouch.y = data.y;
+	context.moveTo(prevPointTouch.x, prevPointTouch.y);
 });
 
 var touchPutPoint = function(e){
@@ -90,7 +98,7 @@ var touchPutPoint = function(e){
 	if(dragging){
 		context.lineTo(touch.pageX, touch.pageY);
 		context.stroke();
-		var dummy = "Circle drawn";
+
 		var data = {
 			x: touch.pageX,
 			y: touch.pageY,
