@@ -39,13 +39,13 @@
             <!-- Title box -->
             <fieldset class="form-group">
                 <label for="exampleInputEmail1">Title</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Title">
+                <input type="text" class="form-control" id="column" placeholder="Title" name="column">
             </fieldset>
             
             <!-- Post Catogories -->
             <fieldset class="form-group">
                 <label for="exampleSelect1">Categories</label>
-                <select class="form-control" id="exampleSelect1">
+                <select class="form-control" id="category">
                     <option>Art</option>
                     <option>Travel</option>
                     <option>Food</option>
@@ -68,12 +68,12 @@
                     <i class="fa fa-camera-retro fa-lg" type="file" class="form-control-file" id="exampleInputFile"></i>
                 </div>
 
-                <textarea class="form-control" id="exampleTextarea" rows="3" style="height: 30vh;">
+                <textarea type="text" class="form-control" id="description" placeholder="Description" name="description" rows="3" style="height: 30vh;">
                 
                 </textarea>
             </fieldset>
             
-            <input class="btn btn-primary" type="button" name="login" value="Post" style="float: right;"  onclick="window.location='./discuss';"/>
+            <input class="btn btn-primary" type="button" name="login" value="Post" style="float: right;"  methon="get" action="/profile"/>
             
             <input class="btn btn-primary" type="button" name="login" value="Save" style="float: right; margin-right: 15px;"/>
 

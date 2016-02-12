@@ -147,6 +147,7 @@ h4{
   padding: 10px;
   font-family: inherit;
   font-size: 14px;
+  text-align: center;
 }
 
 .loginmodal-submit:hover {
@@ -173,7 +174,9 @@ h4{
     line-height: normal;
 }
 
-
+.login {
+    background-image: none;
+}
 
 
 
