@@ -7,8 +7,8 @@ var radius = 3;
 var dragging = false;
 var endEmit = false;
 
-context.canvas.width  = (window.innerWidth)*.9;
-context.canvas.height = (window.innerHeight)*.7;
+context.canvas.width  = (window.innerWidth);
+context.canvas.height = (window.innerHeight);
 
 context.lineWidth = radius*2;
 
