@@ -1,12 +1,19 @@
 #toolbar{
-	width: 100px;
+	height: 100%;
+	width: 60px;
+	background-color: white;
+	position: fixed;
+	color: white;
+	padding-top: 0;
+	padding-left: 0;
+	top: 20%;
 }
-
 .navbar{
 	position: fixed;
 	width: 100%;
-	top: 0;
+	bottom: 0;
 	border-radius: 0px;
+	margin-bottom: 0;
 }
 #whiteboard{
 	width: 100vw;
@@ -15,13 +22,185 @@
 	vertical-align: bottom;
 	background-color: white;
 }
+#whiteboardContainer{
+	margin: 0;
+	padding: 0;
+}
+#brushSize{
+	background-color: #313750;
+	height: 60px;
+	width: 60px;
+    padding:0;
+    margin:0;
+	vertical-align: top;
+	top: 25%;
+
+}
+#color{
+	background-color: #D64541;
+	height: 60px;
+	width: 60px;
+	margin: 0;
+	padding-top: 0;
+	vertical-align: top;
+	top: 25%;
+}
+#text{
+	background-color: #1FBBA6;
+	height: 60px;
+	width: 60px;
+    padding:0;
+    margin:0;
+	vertical-align: top;	
+	top: 25%;
+}
+#mic{
+	background-color: #F27935;
+	height: 60px;
+	width: 60px;
+    padding:0;
+    margin:0;
+	vertical-align: top;	
+	top: 25%;
+}
+#chat{
+	background-color: #00AFD1;
+	height: 60px;
+	width: 60px;
+    padding:0;
+    margin:0;
+	vertical-align: top;	
+	top: 25%;
+}
+#clear{
+	background-color: #D64541;
+	height: 60px;
+	width: 60px;
+    padding:0;
+    margin:0;
+	vertical-align: top;	
+	top: 25%;
+}
+#leave{
+	background-color: #323A45;
+	height: 60px;
+	width: 60px;
+    padding:0;
+    margin:0;
+	vertical-align: top;	
+	top: 25%;
+	color: white;
+}
+
+
+@media screen and (max-width: 500px){
+	#toolbar{
+		width: 100%;
+		height: 40px;
+		background-color: white;
+		position: fixed;
+		color: white;
+		padding-top: 0;
+		top: 0;
+	}
+	#brushSize{
+		background-color: #313750;
+		height: 40px;
+		width: 40px;
+	    padding:0;
+	    margin:0;
+		vertical-align: top;
+		display: inline-block;
+	}
+	#color{
+		background-color: #D64541;
+		height: 40px;
+		width: 40px;
+		margin: 0;
+		padding-top: 0;
+		vertical-align: top;
+		display: inline-block;
+	}
+	#text{
+		background-color: #1FBBA6;
+		height: 40px;
+		width: 40px;
+	    padding:0;
+	    margin:0;
+		vertical-align: top;	
+		display: inline-block;
+	}
+	#mic{
+		background-color: #F27935;
+		height: 40px;
+		width: 40px;
+	    padding:0;
+	    margin:0;
+		vertical-align: top;	
+		display: inline-block;
+	}
+	#chat{
+		background-color: #00AFD1;
+		height: 40px;
+		width: 40px;
+	    padding:0;
+	    margin:0;
+		vertical-align: top;	
+		display: inline-block;
+	}
+	#clear{
+		background-color: #D64541;
+		height: 40px;
+		width: 40px;
+	    padding:0;
+	    margin:0;
+		vertical-align: top;	
+		display: inline-block;
+	}
+	#leave{
+		background-color: #323A45;
+		height: 40px;
+		width: 40px;
+	    padding:0;
+	    margin:0;
+		vertical-align: top;	
+		display: inline-block;
+	}
+}
+
+*{
+	font-family: sans-serif;
+}
 html, body, div, canvas {
     margin: 0;
     padding: 0;
     overflow: hidden;
     display: block;
 }
-#whiteboardContainer{
-	margin: 0;
-	padding: 0;
+body{
+	position: relative;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
