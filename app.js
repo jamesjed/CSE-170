@@ -83,11 +83,7 @@ app.get('/chat', function(req, res){
 	res.render("socket_test", {layout: false});
 });
 
-/*
-app.get('/sample', sample.view);
-<<<<<<< HEAD
-app.get('./profile', profile.addPost);
-*/
+
 
 
 

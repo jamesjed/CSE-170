@@ -35,7 +35,7 @@
     </nav>
 
 		<div class="container">
-            
+            <form role="form" method="get" action="/profile">
             <!-- Title box -->
             <fieldset class="form-group">
                 <label for="exampleInputEmail1">Title</label>
@@ -73,9 +73,12 @@
                 </textarea>
             </fieldset>
             
-            <input class="btn btn-primary" type="button" name="login" value="Cancel" style="float: right;"  method="get" action="/profile"/ onclick="window.location='./sample';">
-            <input class="btn btn-primary" type="button" name="login" value="Save Draft" style="float: right;"  method="get" action="/profile"/ onclick="window.location='./sample';">
-            <input class="btn btn-primary" type="button" name="login" value="Post" style="float: right;"  method="get" action="/profile"/ onclick="window.location='./sample';">
+            <input class="btn btn-primary" type="submit" name="login" value="Cancel">
+            <input class="btn btn-primary" type="submit" name="login" value="Post" style="float: right;">
+            <input class="btn btn-primary" type="submit" name="login" value="Save Draft" style="float: right; margin-right: 15px;">
+                
+            </form>
+        
         </div>
 
 	</body>
