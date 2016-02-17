@@ -133,11 +133,13 @@ app.get('/chat', function(req, res){
 	res.render("socket_test", {layout: false});
 });
 
-app.get('/postData', postData.viewData);
+/*
+app.get('/postData', postData.viewData); */
 /*
 app.get('/sample', sample.view);
 app.get('./profile', profile.addPost);
 */
+
 
 
 
