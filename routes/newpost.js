@@ -1,14 +1,14 @@
 var data = require("../data.json");
 
 exports.addPost = function(req, res) {
-    console.log("NEWpose.js");
+    
     var newPost = {
-        imageURL: req.query.imageURL,
+        imageURL: "http://lorempixel.com/400/400/people",
         column: req.query.column,
-        subTitle: req.query.subTitle,
+        subTitle: "Sub Title",
         description: req.query.description
     };
     
     data["ideas"].push(newPost);
-    res.render('profile', data);
+    res.render('../views/bootprac', data);
 }
