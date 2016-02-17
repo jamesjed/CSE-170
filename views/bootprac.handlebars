@@ -38,17 +38,17 @@
 			<div class="row" id="grid">
                 
                 <!-- data from data.json -->
-                {{#each friends}}
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 centered grid-item" id="post">
+                {{#each postData}}
+                <div class="col col-lg-4 col-md-4 col-sm-6 col-xs-12 centered grid-item" id="post">
 					<a id="postLink" href= "./discuss"> 
 					<div id="imageborder">
-						<img id="picture" src="{{imageURL}}" class="img-responsive">
+						<img id="picture" src="{{imageURL}}"> 
 					</div>
-					<div class="container-fluid" id="titleBox">
-						<h4 style="color:white " id="topicTitle">{{column}}</h4>
-						<p style="color: white" id="subtitle">{{subTitle}}<p>
+					<div class="container-fluid" id="titleBox" style="background-color: #1FBBA6">
+						<h4 style="color:white " id="topicTitle">{{title}}</h4>
+						<p style="color: white" id="subtitle">{{subtitle}}<p>
 					</div>
-					<div id="content" class="container-fluid" >
+					<div id="content" class="container-fluid" style="background-color: #1FBBA6">
 						<p id="contentText">{{description}}</p>
 					</div>
 					</a>
@@ -114,7 +114,6 @@
 					</div>
 					<div class="container-fluid" id="titleBox" style="background-color: #D64541">
 						<h4 style="color:white " id="topicTitle">Column 1</h4>
-						<p style="color: white" id="subtitle"> This is a subtitle<p>
 						<p style="color: white" id="subtitle"> This is a subtitle<p>
 					</div>
 					<div id="content" class="container-fluid" style="background-color: #D64541">
