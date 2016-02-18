@@ -10,4 +10,18 @@ exports.addPost = function(req, res) {
     
     data["ideas"].push(newPost);
     res.render('profile', data);
+    console.log(data);
+    console.log(JSON.stringfy(data));
 }
+
+function newData() {
+  $('input[name="login"]').click(function() {
+    var data = {
+        column: $('#column').val(),
+        description: $('#description').val(),
+    };
+    $.post('./sample', data, function(data) {
+       console.log(data);
+    });
+  });
+};
