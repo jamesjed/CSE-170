@@ -1,10 +1,11 @@
 var data = require("../data.json");
 
 exports.addPost = function(req, res) {
+    
     var newPost = {
-        imageURL: req.query.imageURL,
+        imageURL: "http://lorempixel.com/400/400/people",
         column: req.query.column,
-        subTitle: req.query.subTitle,
+        subTitle: "Sub Title",
         description: req.query.description
     };
     
@@ -25,3 +26,6 @@ function newData() {
     });
   });
 };
+
+    res.render('../views/bootprac', data);
+}
