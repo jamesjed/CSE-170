@@ -98,6 +98,9 @@ app.post('/newpost', function(req, res){
 		}
 	}); 
 
+	res.sendStatus(200);
+	res.end();
+
 });
 
 
