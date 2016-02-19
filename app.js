@@ -24,7 +24,7 @@ var postSchema = mongoose.Schema({
 	imageURL: String,
 	subtitle: String,
 	description: String,
-	color: Number  
+	color: String  
 });
 
 var PostModel = mongoose.model('posts', postSchema);
@@ -90,6 +90,7 @@ app.post('/newpost', function(req, res){
 	newPost.imageURL = req.body.imageURL;
 	newPost.subtitle = req.body.subtitle;
 	newPost.description = req.body.description;
+	newPost.color = req.body.color;
 
 	newPost.save(function(err, savedObject){
 		if(err){
