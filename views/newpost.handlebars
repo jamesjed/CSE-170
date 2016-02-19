@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="/public/css/newpost.css">
         <script type="text/javascript" src="/public/js/jquery_1.9.js"></script>
         <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/public/js/newpost.js"></script>
+        <script type="text/javascript" src="/public/js/newpost.js"></script> 
 		<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
         <!-- Text Editor -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -36,7 +36,7 @@
     </nav>
 
 		<div class="container">
-            <form role="form" method="get" action="/sample">
+            <form role="form" method="post" >
             <!-- Title box -->
             <fieldset class="form-group">
                 <label for="exampleInputEmail1">Title</label>
@@ -74,19 +74,15 @@
                 </textarea>
             </fieldset>
             
-<<<<<<< HEAD
             <input class="btn btn-primary" type="button" name="login" value="Cancel" style="float: right;"  method="get" action="/profile"/ onclick="window.location='./sample';">
-            <input class="btn btn-primary" type="button" name="login" value="Save Draft" style="float: right;"  method="get" action="/profile"/ onclick="window.location='./sample';">
 
-            <input class="btn btn-primary" id="postNew" type="submit" value="Post" style="float: right;" method="post">
-=======
-            <input class="btn btn-primary" type="submit" name="login" value="Cancel">
-            <input class="btn btn-primary" type="submit" name="login" value="Post" style="float: right;">
-            <input class="btn btn-primary" type="submit" name="login" value="Save Draft" style="float: right; margin-right: 15px;">
+            <input class="btn btn-primary" type="button" name="login" value="Save Draft" style="float: right;"  method="post"  action="/profile"/ onclick="window.location='./sample';">
+
+            <input class="btn btn-primary" type="button" name="login" value="Post" style="float: right;"  method="post" id="postNew" onclick="window.location='./newpost';">
                 
             </form>
         
->>>>>>> fa1bd0cf3cc28b3219a04f518db6642c247e5a0b
+
         </div>
 
 

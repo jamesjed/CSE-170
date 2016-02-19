@@ -7,10 +7,7 @@ var multer = require('multer');
 
 // Initialize express object
 var app = express();
-var sample = require('./routes/sample');
-var profile = require('./routes/newpost');
 var post = require('./routes/post');
-var postData = require('./routes/postData');
 
 // Listen on provided or default port =====================
 
@@ -81,9 +78,10 @@ app.get('/sample', function(req, res){
 }); */
 
 app.post('/newpost', function(req, res){
-	//console.log("Post request received!");
-	//console.log(req.body);
+	console.log("Post request received!");
+	console.log(req.body);
 
+	
 	var newPost = new PostModel;
 
 	newPost.title = req.body.title;
@@ -95,15 +93,17 @@ app.post('/newpost', function(req, res){
 		if(err){
 			console.log(err);
 		}
-	});
+	}); 
 
 });
 
-app.get('/sample', post.view);
 
-app.get('/practice', function(req, res){
-	res.render("bootprac", {layout:false});
-});
+app.get('/sample', post.view); 
+
+/*
+app.get('/sample', function(req, res) {
+    res.render("bootprac", {layout: false});
+}); */
 
 app.get('/newpost', function(req, res) {
     res.render("newpost", {layout: false});
@@ -132,14 +132,6 @@ app.get('/following', function(req, res) {
 app.get('/chat', function(req, res){
 	res.render("socket_test", {layout: false});
 });
-
-/*
-app.get('/postData', postData.viewData); */
-/*
-app.get('/sample', sample.view);
-app.get('./profile', profile.addPost);
-*/
-
 
 
 
