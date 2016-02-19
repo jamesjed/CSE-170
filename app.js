@@ -7,7 +7,9 @@ var multer = require('multer');
 
 // Initialize express object
 var app = express();
+
 var post = require('./routes/post');
+
 
 // Listen on provided or default port =====================
 
@@ -132,6 +134,5 @@ app.get('/following', function(req, res) {
 app.get('/chat', function(req, res){
 	res.render("socket_test", {layout: false});
 });
-
 
 
