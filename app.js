@@ -27,7 +27,14 @@ var postSchema = mongoose.Schema({
 	color: String  
 });
 
+var userSchema = mongoose.Schema({
+	username: String,
+	password: String,
+	email: String
+});
+
 var PostModel = mongoose.model('posts', postSchema);
+var UserModel = mongoose.model('users', userSchema);
 
 var port = process.env.PORT || 8080;
 
@@ -93,6 +100,27 @@ app.post('/newpost', function(req, res){
 	newPost.color = req.body.color;
 
 	newPost.save(function(err, savedObject){
+		if(err){
+			console.log(err);
+		}
+	}); 
+
+	res.sendStatus(200);
+	res.end();
+
+});
+
+app.post('/', function(req, res){
+	console.log("Post request received!");
+	console.log(req.body);
+
+	var newUser = new UserModel;
+
+	newUser.username = req.body.username;
+	newUser.password = req.body.password;
+	newUser.email = req.body.email;
+
+	newUser.save(function(err, savedObject){
 		if(err){
 			console.log(err);
 		}
