@@ -9,9 +9,10 @@
 		<link rel="stylesheet" type="text/css" href="/public/css/landing.css">
 		<link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-		<script type="text/javascript" src="/public/js/landing.js"></script>
+
 	    <script type="text/javascript" src="/public/js/jquery_1.9.js"></script>
 	    <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/public/js/landing.js"></script>
 <!--
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -63,7 +64,7 @@
 				<div class="loginmodal-container">
 					<h1>Welcome!</h1><br>
 				  <form>
-					<input type="text" name="user" placeholder="Username" id ="username">
+					<input type="text" name="user" placeholder="Username" id="username">
 					<input type="password" name="pass" placeholder="Password" id="password">
 					<input id="submitLogin" onclick="window.location='./sample';" name="login" class="login loginmodal-submit" value="Login" >
 				  </form>
@@ -85,9 +86,9 @@
 				  <form role="form" method="post">
 					<input type="text" name="user" placeholder="Username" id="usernamePick">
                     <input type="text" name="email" placeholder="Email" id="emailPick">  
-					<input type="password" name="pass" placeholder="Password" id="passwordPick">
+					<input type="password" name="pass" placeholder="Password!" id="passwordPick">
                     <input type="password" name="pass" placeholder="Confirm Password">  
-					<input id="submitLogin" name="login" class="login loginmodal-submit register" value="Create Account" method="post" type="button" onclick="window.location='/';" >
+					<input id="submitLogin" name="login" class="login loginmodal-submit register" value="Create Account" method="post" type="button" onclick="window.location='/';">
 				  </form>
 					
 				</div>

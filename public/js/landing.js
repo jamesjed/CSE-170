@@ -1,9 +1,12 @@
-/*$('a').click(function(){
+/*
+
+$('a').click(function(){
     $('html, body').animate({
         scrollTop: $( $(this).attr('href') ).offset().top
     }, 500);
     return false;
-});*/
+}); */
+
 
 'use strict';
 
@@ -32,10 +35,12 @@ function createNewUser(){
 		"password": newPassword,
 		"email": newEmail
 	}
-
 	console.log("new user!");
 	$.post('/', newUser, function(data){
 		//console.log(newPost);
 	}); 
+
 }
+
+
 

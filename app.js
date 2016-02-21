@@ -26,7 +26,7 @@ var postSchema = mongoose.Schema({
 	imageURL: String,
 	subtitle: String,
 	description: String,
-	color: String 
+	color: String  
 });
 
 var userSchema = mongoose.Schema({
@@ -107,6 +107,31 @@ app.post('/newpost', function(req, res){
 			console.log(err);
 		}
 	}); 
+
+	res.sendStatus(200);
+	res.end();
+
+});
+
+app.post('/', function(req, res){
+	console.log("Post request received!");
+	console.log(req.body);
+
+	var newUser = new UserModel;
+
+	newUser.username = req.body.username;
+	newUser.password = req.body.password;
+	newUser.email = req.body.email;
+
+	newUser.save(function(err, savedObject){
+		if(err){
+			console.log(err);
+		}
+	}); 
+
+	res.sendStatus(200);
+	res.end();
+
 });
 
 app.post('/', function(req, res){

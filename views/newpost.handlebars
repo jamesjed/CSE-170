@@ -24,14 +24,15 @@
                 </button>
             </div>
             <div class="collapse navbar-collapse" id="navbar-container">
-                    <form class="navbar-form" role="search">
-                        <div class = "form=group">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li id="navListElement"><a href="./profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>          
-                            </ul>
-                        </div>
-                    </form>
-           </div>
+	            	<form class="navbar-form" role="search">
+	            		<div class = "form=group">
+	                		<ul class="nav navbar-nav navbar-right">
+	                    		<li id="navListElement"><a href="./profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>      
+                                <li id="navListElement"><a href="/">Logout</a></li>        
+	                		</ul>
+    					</div>
+    				</form>
+	       </div>
         </div>
     </nav>
 
@@ -42,15 +43,15 @@
                 <label for="exampleInputEmail1">Title</label>
                 <input type="text" class="form-control" id="postTitle" placeholder="Title" name="column">
             </fieldset>
-              
-              <fieldset class="form-group">
-                 <label for="exampleInputEmail1">Subtitle</label>
-                 <input type="text" class="form-control" id="postSubtitle" placeholder="Title" name="column">
-             </fieldset>
- 
-             <fieldset class="form-group">
-                 <label for="exampleInputEmail1">Image URL</label>
-                 <input type="text" class="form-control" id="postImage" placeholder="Title" name="column">
+
+            <fieldset class="form-group">
+                <label for="exampleInputEmail1">Subtitle</label>
+                <input type="text" class="form-control" id="postSubtitle" placeholder="Title" name="column">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="exampleInputEmail1">Image URL</label>
+                <input type="text" class="form-control" id="postImage" placeholder="Title" name="column">
             </fieldset>
             
             <!-- Post Catogories -->
@@ -87,9 +88,14 @@
 
             <input class="btn btn-primary" type="button" name="login" value="Save Draft" style="float: right;"  method="post"  action="/profile"/ onclick="window.location='./sample';">
 
-           <input class="btn btn-primary" type="button" name="login" value="Post" style="float: right;"  method="post" id="postNew" onclick="window.location='./sample';">
+            <input class="btn btn-primary" type="button" name="login" value="Post" style="float: right;"  method="post" id="postNew" onclick="window.location='./sample';">
                 
-           </form>
+            </form>
+        
+        
         </div>
+    
+
     </body>
+
 </html>
