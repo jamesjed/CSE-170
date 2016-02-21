@@ -18,13 +18,18 @@ function initializePage() {
 
 function postNew(){
 	var title = $('#postTitle').val();
-	//console.log("Click event detected");
+	var url = $('#postImage').val();
+ 	var subtitle = $('#postSubtitle').val();
+ 	var description = $('#description').val();
+ 	var colors = ['#1FBBA6', '#F27935', '#A51E51', '#D64541', '#00AFD1', '#313750'];
+ 	var colorVar = Math.floor(Math.random()*5) + 0;
 
 	var newPost = {
-		"imageURL": "http://www.yosemitehikes.com/images/wallpaper/yosemitehikes.com-upper-yosemite-falls-1900x1200.jpg",
-		"title": "Next Steps in Conservation",
-		"subtitle": "This is a subtitle",
-		"description": "This is just a sample post with a picture of yosemite"
+		"imageURL": url,
+ 		"title": title,
+ 		"subtitle": subtitle,
+ 		"description": description,
+ 		"color": colors[colorVar]
 	} 
 	
 	$.post('./newpost', newPost, function(data){

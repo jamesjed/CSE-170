@@ -63,8 +63,8 @@
 				<div class="loginmodal-container">
 					<h1>Welcome!</h1><br>
 				  <form>
-					<input type="text" name="user" placeholder="Username">
-					<input type="password" name="pass" placeholder="Password">
+					<input type="text" name="user" placeholder="Username" id ="username">
+					<input type="password" name="pass" placeholder="Password" id="password">
 					<input id="submitLogin" onclick="window.location='./sample';" name="login" class="login loginmodal-submit" value="Login" >
 				  </form>
 					
@@ -80,14 +80,14 @@
                 <!------ SignUp MODAL -------->
                 <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     	  <div class="modal-dialog">
-				<div class="loginmodal-container">
+				<div class="loginmodal-container" id="register">
 					<h1>Welcome!</h1><br>
-				  <form>
-					<input type="text" name="user" placeholder="Username">
-                    <input type="text" name="email" placeholder="Email">  
-					<input type="password" name="pass" placeholder="Password">
+				  <form role="form" method="post">
+					<input type="text" name="user" placeholder="Username" id="usernamePick">
+                    <input type="text" name="email" placeholder="Email" id="emailPick">  
+					<input type="password" name="pass" placeholder="Password" id="passwordPick">
                     <input type="password" name="pass" placeholder="Confirm Password">  
-					<input id="submitLogin" onclick="window.location='./sample';" name="login" class="login loginmodal-submit" value="Create Account" >
+					<input id="submitLogin" name="login" class="login loginmodal-submit register" value="Create Account" method="post" type="button" onclick="window.location='/';" >
 				  </form>
 					
 				</div>
