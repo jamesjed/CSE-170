@@ -19,7 +19,7 @@ $(document).ready(function() {
 function initializePage(){
 	console.log("Page initialized!");
 	$('.register').click(createNewUser);
-	$('.userlogin').click(userLogin);
+	$('.login').click(userLogin);
 	
 };
 
