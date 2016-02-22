@@ -105,6 +105,7 @@ app.post('/newpost', function(req, res){
 	newPost.save(function(err, savedObject){
 		if(err){
 			console.log(err);
+			return res.status(500).send();
 		}
 	}); 
 
@@ -126,6 +127,7 @@ app.post('/', function(req, res){
 	newUser.save(function(err, savedObject){
 		if(err){
 			console.log(err);
+			return res.status(500).send();
 		}
 	}); 
 
@@ -134,25 +136,29 @@ app.post('/', function(req, res){
 
 });
 
-app.post('/', function(req, res){
-   console.log("Post request received!");
-   console.log(req.body);
-  
-   var newUser = new UserModel;
-  
-   newUser.username = req.body.username;
-   newUser.password = req.body.password;
-   newUser.email = req.body.email;
-  
-   //error check
-   newUser.save(function(err, savedObject){
-   	if(err){
-   		console.log(err);
-   		return res.status(500).send();
-   	}
-   	return res.status(200).send();
-   }) 
- });
+//TODO: finish login auth
+//login authentication
+app.get('/', function(req,res){
+	UserModel.findOne({username: username, password: password}, function(err, user){
+		if(err){
+			console.log(err);
+			return res.status(500).send();
+		}
+
+		if(!user){
+			return res.status(404).send();
+			res.redirect('/');
+			res.end();
+		}
+		else{
+			//user is found
+			req.session.user = user;
+			res.status(200).send();
+			res.redirect('/views/bootprac');
+			res.end();
+		}
+	})
+});
 
 app.get('/sample', post.view); 
 
