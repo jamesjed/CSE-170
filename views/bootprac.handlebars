@@ -8,6 +8,18 @@
     	<script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
 		<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-73995106-1', 'https://tranquil-mountain-45267.herokuapp.com/sample');
+		  ga('send', 'pageview');
+
+		</script>
+
 	<head>
 
 	<body>
@@ -53,17 +65,18 @@
 					<div id="imageborder">
 						<img id="picture" src="{{imageURL}}"> 
 					</div>
-					<div class="container-fluid" id="titleBox" style="background-color: #1FBBA6">
+					<div class="container-fluid" id="titleBox" style="background-color: {{color}}">
 						<h4 style="color:white " id="topicTitle">{{title}}</h4>
 						<p style="color: white" id="subtitle">{{subtitle}}<p>
 					</div>
-					<div id="content" class="container-fluid" style="background-color: #1FBBA6">
+					<div id="content" class="container-fluid" style="background-color: {{color}} ">
 						<p id="contentText">{{description}}</p>
 					</div>
 				</div>
                 {{/each}}
                 <!-- End -->
                 
+                <!--
                 <div class="col col-lg-4 col-md-4 col-sm-6 col-xs-12 centered grid-item" id="post" data-toggle="modal" data-target="#myModal">
 					<div id="imageborder">
 						<img id="picture" src="http://www.givingbacksmiles.com/wp-content/uploads/2012/06/NAT-GEO-Ad-Tiger.jpg"> 
@@ -89,8 +102,6 @@
 						<p id="contentText">Compassion is the sometimes fatal capacity for feeling what it is like to live inside somebody else's skin. It's the knowledge that there can never really be any peace and joy for me until there is peace and joy finally for you too.</p>
 					</div>					
 				</div>
-
-
 
 				<div class="col col-lg-4 col-md-4 col-sm-6 col-xs-12 grid-item" id="post" id="titlebar" data-toggle="modal" data-target="#myModal">
 					<div id="imageborder">
@@ -139,9 +150,6 @@
 				</div>
 
 
-
-
-
 				<div class="col col-lg-4 col-md-4 col-sm-6 col-xs-12 grid-item" id="post" id="titlebar" data-toggle="modal" data-target="#myModal">
 					
 					<div id="imageborder">
@@ -171,6 +179,8 @@
 					</div>
 					
 				</div>
+
+			-->
 
 				<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
 				<script>

@@ -4,20 +4,19 @@ var mongodb = require("mongodb");
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var multer = require('multer');
+//var session = require('express-session');
 
 // Initialize express object
 var app = express();
-var sample = require('./routes/sample');
 
-var profile = require('./routes/newpost');
 var post = require('./routes/post');
-var postData = require('./routes/postData');
 
 
 // Listen on provided or default port =====================
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+//app.use(session({secret: "secret", resave:false,saveUninitialized:true}))
 //app.use(multer());
 
 mongoose.connect('mongodb://james:zerowing1@ds059125.mongolab.com:59125/cse170');
@@ -27,10 +26,17 @@ var postSchema = mongoose.Schema({
 	imageURL: String,
 	subtitle: String,
 	description: String,
-	color: Number  
+	color: String  
+});
+
+var userSchema = mongoose.Schema({
+	username: String,
+	password: String,
+	email: String
 });
 
 var PostModel = mongoose.model('posts', postSchema);
+var UserModel = mongoose.model('users', userSchema);
 
 var port = process.env.PORT || 8080;
 
@@ -83,29 +89,83 @@ app.get('/sample', function(req, res){
 }); */
 
 app.post('/newpost', function(req, res){
-	//console.log("Post request received!");
-	//console.log(req.body);
+	console.log("Post request received!");
+	console.log(req.body);
 
+	
 	var newPost = new PostModel;
 
 	newPost.title = req.body.title;
 	newPost.imageURL = req.body.imageURL;
 	newPost.subtitle = req.body.subtitle;
 	newPost.description = req.body.description;
+	newPost.color = req.body.color;
 
+	//error check
 	newPost.save(function(err, savedObject){
 		if(err){
 			console.log(err);
+			return res.status(500).send();
 		}
-	});
+	}); 
+
+	res.sendStatus(200);
+	res.end();
 
 });
 
-app.get('/sample', post.view);
+app.post('/', function(req, res){
+	console.log("Post request received!");
+	console.log(req.body);
 
-app.get('/practice', function(req, res){
-	res.render("bootprac", {layout:false});
+	var newUser = new UserModel;
+
+	newUser.username = req.body.username;
+	newUser.password = req.body.password;
+	newUser.email = req.body.email;
+
+	newUser.save(function(err, savedObject){
+		if(err){
+			console.log(err);
+			return res.status(500).send();
+		}
+	}); 
+
+	res.sendStatus(200);
+	res.end();
+
 });
+
+//TODO: finish login auth
+//login authentication
+app.get('/', function(req,res){
+	UserModel.findOne({username: username, password: password}, function(err, user){
+		if(err){
+			console.log(err);
+			return res.status(500).send();
+		}
+
+		if(!user){
+			return res.status(404).send();
+			res.redirect('/');
+			res.end();
+		}
+		else{
+			//user is found
+			req.session.user = user;
+			res.status(200).send();
+			res.redirect('/views/bootprac');
+			res.end();
+		}
+	})
+});
+
+app.get('/sample', post.view); 
+
+/*
+app.get('/sample', function(req, res) {
+    res.render("bootprac", {layout: false});
+}); */
 
 app.get('/newpost', function(req, res) {
     res.render("newpost", {layout: false});
@@ -134,13 +194,5 @@ app.get('/following', function(req, res) {
 app.get('/chat', function(req, res){
 	res.render("socket_test", {layout: false});
 });
-
-/*
-app.get('/postData', postData.viewData); */
-/*
-app.get('/sample', sample.view);
-app.get('./profile', profile.addPost);
-*/
-
 
 

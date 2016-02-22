@@ -1,20 +1,20 @@
 <html>
 
-	<head>
-		<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
         <link rel="stylesheet" type="text/css" href="/public/css/newpost.css">
         <script type="text/javascript" src="/public/js/jquery_1.9.js"></script>
         <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/public/js/newpost.js"></script>
-		<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+        <script type="text/javascript" src="/public/js/newpost.js"></script> 
+        <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
         <!-- Text Editor -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-		
-	<head>
+        
+    <head>
 
-	<body>
+    <body>
 
     <nav class="navbar navbar-default" role="navigation" style="background-color: white">
         <div class="container">
@@ -27,7 +27,8 @@
 	            	<form class="navbar-form" role="search">
 	            		<div class = "form=group">
 	                		<ul class="nav navbar-nav navbar-right">
-	                    		<li id="navListElement"><a href="./profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>          
+	                    		<li id="navListElement"><a href="./profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>      
+                                <li id="navListElement"><a href="/">Logout</a></li>        
 	                		</ul>
     					</div>
     				</form>
@@ -35,12 +36,22 @@
         </div>
     </nav>
 
-		<div class="container">
-            <form role="form" method="get" action="/sample">
+        <div class="container">
+            <form role="form" method="post" >
             <!-- Title box -->
             <fieldset class="form-group">
                 <label for="exampleInputEmail1">Title</label>
                 <input type="text" class="form-control" id="postTitle" placeholder="Title" name="column">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="exampleInputEmail1">Subtitle</label>
+                <input type="text" class="form-control" id="postSubtitle" placeholder="Title" name="column">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="exampleInputEmail1">Image URL</label>
+                <input type="text" class="form-control" id="postImage" placeholder="Title" name="column">
             </fieldset>
             
             <!-- Post Catogories -->
@@ -69,8 +80,11 @@
                     <i class="fa fa-camera-retro fa-lg" type="file" class="form-control-file" id="exampleInputFile"></i>
                 </div>
 
+            <textarea type="text" class="form-control" id="description" placeholder="Description" name="description" rows="3" style="height: 30vh;"></textarea>
+
             </fieldset>
             
+<<<<<<< HEAD
                 <textarea id="postDesc" type="text" class="form-control" id="description" placeholder="Description" name="description" rows="3" style="height: 30vh;"></textarea>
             </fieldset>
             
@@ -80,29 +94,20 @@
 
             <input class="btn btn-primary" type="submit" name="login" value="Cancel" style="margin-top: 10px;">
             
+=======
+            <input class="btn btn-primary" type="button" name="login" value="Cancel" style="float: right;"  method="get" action="/profile"/ onclick="window.location='./sample';">
 
+            <input class="btn btn-primary" type="button" name="login" value="Save Draft" style="float: right;"  method="post"  action="/profile"/ onclick="window.location='./sample';">
+>>>>>>> origin/master
+
+            <input class="btn btn-primary" type="button" name="login" value="Post" style="float: right;"  method="post" id="postNew" onclick="window.location='./sample';">
                 
             </form>
         
+        
         </div>
+    
 
-
-	</body>
+    </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
