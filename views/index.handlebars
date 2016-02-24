@@ -61,12 +61,12 @@
                 <!------ LOGIN MODAL -------->
                 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     	  <div class="modal-dialog">
-				<div class="loginmodal-container">
+				<div class="loginmodal-container" id="login">
 					<h1>Welcome!</h1><br>
-				  <form>
+				  <form role="form" method"get">
 					<input type="text" name="user" placeholder="Username" id="username">
 					<input type="password" name="pass" placeholder="Password" id="password">
-					<input id="submitLogin" onclick="window.location='./sample';" name="login" class="login loginmodal-submit" value="Login" >
+					<input id="submitLogin" name="login" class="login loginmodal-submit login" value="Login" method="get" type="button" onclick="window.location='/sample';">
 				  </form>
 					
 				  <div class="login-help">
@@ -85,10 +85,10 @@
 					<h1>Welcome!</h1><br>
 				  <form role="form" method="post">
 					<input type="text" name="user" placeholder="Username" id="usernamePick">
-                    <input type="text" name="email" placeholder="Email" id="emailPick">  
+                    <input type="text" name="email" placeholder="Email" id="emailPick"> 
 					<input type="password" name="pass" placeholder="Password!" id="passwordPick">
                     <input type="password" name="pass" placeholder="Confirm Password">  
-					<input id="submitLogin" name="login" class="login loginmodal-submit register" value="Create Account" method="post" type="button" onclick="window.location='/';">
+					<input id="submitLogin" name="signup" class="login loginmodal-submit register" value="Create Account" method="post" type="button" onclick="window.location='/';">
 				  </form>
 					
 				</div>

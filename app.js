@@ -4,6 +4,7 @@ var mongodb = require("mongodb");
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var multer = require('multer');
+//var session = require('express-session');
 
 // Initialize express object
 var app = express();
@@ -15,6 +16,7 @@ var post = require('./routes/post');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+//app.use(session({secret: "secret", resave:false,saveUninitialized:true}))
 //app.use(multer());
 
 mongoose.connect('mongodb://james:zerowing1@ds059125.mongolab.com:59125/cse170');
@@ -24,7 +26,10 @@ var postSchema = mongoose.Schema({
 	imageURL: String,
 	subtitle: String,
 	description: String,
-	color: String  
+	color: String,
+    category: String,
+    date: Date
+    
 });
 
 var userSchema = mongoose.Schema({
@@ -102,13 +107,17 @@ app.post('/newpost', function(req, res){
 	newPost.subtitle = req.body.subtitle;
 	newPost.description = req.body.description;
 	newPost.color = req.body.color;
+    newPost.category = req.body.category;
+    newPost.date = new Date();
 
+	//error check
 	newPost.save(function(err, savedObject){
 		if(err){
 			console.log(err);
+			return res.status(500).send();
 		}
 	}); 
-
+    
 	res.sendStatus(200);
 	res.end();
 
@@ -127,6 +136,7 @@ app.post('/', function(req, res){
 	newUser.save(function(err, savedObject){
 		if(err){
 			console.log(err);
+			return res.status(500).send();
 		}
 	}); 
 
@@ -135,14 +145,40 @@ app.post('/', function(req, res){
 
 });
 
+
 app.post('/chat', function(req, res){
 	console.log("Post request received on chat!");
 	console.log(req.body.column);
 
 	res.sendStatus(200);
 	res.end();
-
 });
+
+/*
+//TODO: finish login auth
+//login authentication
+app.get('/', function(req,res){
+	UserModel.findOne({username: username, password: password}, function(err, user){
+		if(err){
+			console.log(err);
+			return res.status(500).send();
+		}
+
+		if(!user){
+			return res.status(404).send();
+			res.redirect('/');
+			res.end();
+		}
+		else{
+			//user is found
+			req.session.user = user;
+			res.status(200).send();
+			res.redirect('/views/bootprac');
+			res.end();
+		}
+	})
+
+}); */
 
 app.get('/sample', post.view); 
 
