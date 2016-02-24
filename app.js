@@ -26,7 +26,9 @@ var postSchema = mongoose.Schema({
 	imageURL: String,
 	subtitle: String,
 	description: String,
-	color: String  
+	color: String,
+    date: Date
+    
 });
 
 var userSchema = mongoose.Schema({
@@ -100,6 +102,7 @@ app.post('/newpost', function(req, res){
 	newPost.subtitle = req.body.subtitle;
 	newPost.description = req.body.description;
 	newPost.color = req.body.color;
+    newPost.date = new Date();
 
 	//error check
 	newPost.save(function(err, savedObject){
@@ -108,7 +111,7 @@ app.post('/newpost', function(req, res){
 			return res.status(500).send();
 		}
 	}); 
-
+    
 	res.sendStatus(200);
 	res.end();
 

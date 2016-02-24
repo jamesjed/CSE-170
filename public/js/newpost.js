@@ -32,7 +32,6 @@ function postNew(){
 	} 
 	
 	$.post('./newpost', newPost, function(data){
-		//console.log(newPost);
 	}); 
 
 

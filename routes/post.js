@@ -10,6 +10,6 @@ exports.view = function(req, res){
 	mongoose.model('posts').find({}, function(err, posts){
 		//console.log(posts);
 		res.render('bootprac', {postData: posts, layout: false });			
-	});
+	}).sort({"date": -1});
 	
 };
