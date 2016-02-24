@@ -121,7 +121,7 @@
 	}
 	#chatWindow{
 		height: 80%;
-		padding-top: 15%;
+		padding-top: 30%;
 		overflow: auto;
 	}
 	#toolbar{
