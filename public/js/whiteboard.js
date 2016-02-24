@@ -154,7 +154,7 @@ socket.on('showUserType', function(data){
 	console.log("Receiving data on client!");
 	console.log(data[0].value);
 
-	$('#chatWindow').append(data[0].value + '</br>');
+	$('#chatWindow').append( data[0].value + '</br>');
 	$('#chatWindow').scrollTop($('#chatWindow')[0].scrollHeight);
 
 });
