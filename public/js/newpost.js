@@ -22,17 +22,18 @@ function postNew(){
  	var description = $('#description').val();
  	var colors = ['#1FBBA6', '#F27935', '#A51E51', '#D64541', '#00AFD1', '#313750'];
  	var colorVar = Math.floor(Math.random()*5) + 0;
+ 	var cat = $('#category').val();
 
 	var newPost = {
 		"imageURL": url,
  		"title": title,
  		"subtitle": subtitle,
  		"description": description,
- 		"color": colors[colorVar]
+ 		"color": colors[colorVar],
+ 		"category": cat
 	} 
 	
 	$.post('./newpost', newPost, function(data){
-		//console.log(newPost);
 	}); 
 
 

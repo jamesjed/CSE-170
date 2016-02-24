@@ -91,9 +91,39 @@
 	top: 25%;
 	color: white;
 }
+#displayInfo{
+	width: 80vw;
+	background-color: #00AFD1;
+	float: right;
+	height: 100vh;
+}
+
+#textIn{
+	width: 80%;
+	display: inline-block;
+}
+#chatWindow{
+	height: 80%;
+	overflow:auto;
+}
 
 
 @media screen and (max-width: 500px){
+	#displayInfo{
+		width: 100%;
+		background-color: #00AFD1;
+		float: right;
+		height: 80vh;
+	}
+
+	#textIn{
+		width: 90%;
+	}
+	#chatWindow{
+		height: 80%;
+		padding-top: 35%;
+		overflow: auto;
+	}
 	#toolbar{
 		width: 100%;
 		height: 40px;

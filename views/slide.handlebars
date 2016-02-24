@@ -1,0 +1,56 @@
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="/public/css/slide.css">
+        <script type="text/javascript" src="/public/js/jquery_1.9.js"></script>
+        <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/public/js/slide.js"></script>  
+        <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+        <!-- Text Editor -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+        <style>
+            #chatWindow{
+                height: 70vh;
+                overflow: auto;
+            }
+            .navbar{
+                width: 100vw;
+            }
+            html, body{
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        
+    <head>
+
+    <body>
+
+            <div id="displayInfo" class="container-fluid">
+                <div class="container" id="chatWindow">
+
+                </div>
+
+                <div class="container">
+                    <form type="submit" id="chatData">
+                        <input type="text" class="form-control" id="textIn" placeholder="Title" name="column">
+                        <input class="btn btn-primary" type="submit" name="login" value="Send" style="float: right;" id="chatPost">
+                    </form>
+                </div>
+            </div>
+
+            <a href="#" id="toggle">
+                <div id="toggleDiv">
+                Toggle slide
+                </div>
+            </a>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    </body>
+
+</html>

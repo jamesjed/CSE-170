@@ -26,7 +26,10 @@ var postSchema = mongoose.Schema({
 	imageURL: String,
 	subtitle: String,
 	description: String,
-	color: String  
+	color: String,
+    category: String,
+    date: Date
+    
 });
 
 var userSchema = mongoose.Schema({
@@ -62,6 +65,10 @@ io.sockets.on('connection', function(socket){
 	socket.on('mouse position', function(data){
 		socket.broadcast.emit("send position", data);
 	});
+	socket.on('userSubmit', function(data){
+		console.log("Socket received data!");
+		io.sockets.emit('showUserType', data);
+	});
 });
 
 // Set UI engine ==========================================
@@ -90,7 +97,7 @@ app.get('/sample', function(req, res){
 
 app.post('/newpost', function(req, res){
 	console.log("Post request received!");
-	console.log(req.body);
+	console.log(req.body.value);
 
 	
 	var newPost = new PostModel;
@@ -100,6 +107,8 @@ app.post('/newpost', function(req, res){
 	newPost.subtitle = req.body.subtitle;
 	newPost.description = req.body.description;
 	newPost.color = req.body.color;
+    newPost.category = req.body.category;
+    newPost.date = new Date();
 
 	//error check
 	newPost.save(function(err, savedObject){
@@ -108,7 +117,7 @@ app.post('/newpost', function(req, res){
 			return res.status(500).send();
 		}
 	}); 
-
+    
 	res.sendStatus(200);
 	res.end();
 
@@ -136,6 +145,16 @@ app.post('/', function(req, res){
 
 });
 
+
+app.post('/chat', function(req, res){
+	console.log("Post request received on chat!");
+	console.log(req.body.column);
+
+	res.sendStatus(200);
+	res.end();
+});
+
+/*
 //TODO: finish login auth
 //login authentication
 app.get('/', function(req,res){
@@ -158,14 +177,15 @@ app.get('/', function(req,res){
 			res.end();
 		}
 	})
-});
+
+}); */
 
 app.get('/sample', post.view); 
 
 /*
 app.get('/sample', function(req, res) {
     res.render("bootprac", {layout: false});
-}); */
+});  */
 
 app.get('/newpost', function(req, res) {
     res.render("newpost", {layout: false});
@@ -192,7 +212,7 @@ app.get('/following', function(req, res) {
 });
 
 app.get('/chat', function(req, res){
-	res.render("socket_test", {layout: false});
+	res.render("chat_sample", {layout: false});
 });
 
 

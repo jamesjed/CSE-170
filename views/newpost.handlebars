@@ -57,12 +57,12 @@
             <!-- Post Catogories -->
             <fieldset class="form-group">
                 <label for="exampleSelect1">Categories</label>
-                <select class="form-control" id="category">
-                    <option>Art</option>
-                    <option>Travel</option>
-                    <option>Food</option>
-                    <option>Music</option>
-                    <option>Dream</option>
+                <select type="text" class="form-control" id="category">
+                    <option value="Art">Art</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Food">Food</option>
+                    <option value="Music">Music</option>
+                    <option value="Philosophy">Philosophy</option>
                 </select>
             </fieldset>
             
@@ -80,13 +80,15 @@
                     <i class="fa fa-camera-retro fa-lg" type="file" class="form-control-file" id="exampleInputFile"></i>
                 </div>
 
-            <textarea type="text" class="form-control" id="description" placeholder="Description" name="description" rows="3" style="height: 30vh;"></textarea>
+            <textarea id="postDesc" type="text" class="form-control" id="description" placeholder="Description" name="description" rows="3" style="height: 30vh;"></textarea>
 
             </fieldset>
             
+
             <input class="btn btn-primary" type="button" name="login" value="Cancel" style="float: right;"  method="get" action="/profile"/ onclick="window.location='./sample';">
 
             <input class="btn btn-primary" type="button" name="login" value="Save Draft" style="float: right;"  method="post"  action="/profile"/ onclick="window.location='./sample';">
+
 
             <input class="btn btn-primary" type="button" name="login" value="Post" style="float: right;"  method="post" id="postNew" onclick="window.location='./sample';">
                 
@@ -95,7 +97,14 @@
         
         </div>
     
-
+<script>
+    $('select').change(function(){
+    if (/iOS/.test(navigator.userAgent)){
+        $(this).blur();
+    }
+});
+</script>
+        
     </body>
 
 </html>
