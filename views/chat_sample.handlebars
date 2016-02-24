@@ -1,0 +1,67 @@
+<html>
+
+<head>
+		<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="/public/css/newpost.css">
+        <script type="text/javascript" src="/public/js/jquery_1.9.js"></script>
+        <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/public/js/chat_sample.js"></script> 
+		<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+        <!-- Text Editor -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+        <style>
+        	#chatWindow{
+        		height: 70vh;
+                overflow: auto;
+        	}
+            .navbar{
+                width: 100vw;
+            }
+            html, body{
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default" role="navigation" style="background-color: white">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href='/discuss'><< Whiteboard</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-container">
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-container">
+                    <form class="navbar-form" role="search">
+                        <div class = "form=group">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li id="navListElement"><a href="./profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>      
+                                <li id="navListElement"><a href="/">Logout</a></li>        
+                            </ul>
+                        </div>
+                    </form>
+           </div>
+        </div>
+    </nav>
+
+	<div class="container" id="chatWindow">
+
+	</div>
+
+    <div class="container">
+    	<form type="submit" id="chatData">
+            <input type="text" class="form-control" id="textIn" placeholder="Title" name="column">
+            <input class="btn btn-primary" type="submit" name="login" value="Send" style="float: right;" id="chatPost">
+    	</form>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+</body>
+
+</html>
