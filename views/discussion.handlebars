@@ -24,6 +24,9 @@
 
         </script>
 
+        <style>
+        </style>
+
     </head>
 
 <!-- <body style="background-color: white;">
@@ -60,7 +63,7 @@
             <div id="mic">
                 <i class="large material-icons">mic</i>
             </div>
-            <a href="./chat" style="color: white">
+            <a href="#" style="color: white" id="chatLink">
             <div id="chat">
                 <i class="large material-icons">chat</i>
             </div>
@@ -74,6 +77,21 @@
                 <span class="glyphicon glyphicon-log-out"></span>
             </div></a>
         </center>       
+    </div>
+
+    <div id="displayInfo" class="container-fluid">
+        <div class="container" id="chatWindow">
+
+        </div>
+
+        <div class="container">
+            <form type="submit" id="chatData">
+                <div class="container">
+                <input type="text" class="form-control" id="textIn" placeholder="Title" name="column">
+                 </div>
+                <input class="btn btn-primary" type="submit" name="login" value="Send" style="display:inline-block" id="chatPost">
+            </form>
+        </div>
     </div>
 
     <div class="container-fluid" id="whiteboardContainer">

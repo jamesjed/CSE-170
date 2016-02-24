@@ -21,6 +21,13 @@ var prevPointTouch = {};
 
 prevPointMouse.x = 1;
 
+
+$("#chatLink").click(function(){
+	$("#displayInfo").slideToggle('right');
+	event.preventDefault();
+	return true;
+});
+
 // Receive data from other user drawings and use the data
 // to draw data on your own screen
 socket.on('mouseReceive', function(data){
@@ -138,4 +145,31 @@ canvas.addEventListener('mouseup', stopDraw);
 canvas.addEventListener('touchmove', touchPutPoint);
 canvas.addEventListener('touchstart', touchStartDraw);
 canvas.addEventListener('touchend', touchStopDraw);
+
+console.log("Javascript and JQuery loaded!");
+
+$("#chatData").submit(broadcast);
+
+socket.on('showUserType', function(data){
+	console.log("Receiving data on client!");
+	console.log(data[0].value);
+
+	$('#chatWindow').append(data[0].value + '</br>');
+	$('#chatWindow').scrollTop($('#chatWindow')[0].scrollHeight);
+
+});
+
+function broadcast(){
+
+	event.preventDefault();
+	var $serialized = $("#chatData").serializeArray();
+	var serialized = JSON.stringify($serialized);
+	console.log($serialized);
+
+	socket.emit('userSubmit', $serialized);
+
+	$.post('/chat', $serialized, function(data){
+		$('#textIn').val('');
+	});
+}
 
