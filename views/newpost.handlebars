@@ -97,7 +97,14 @@
         
         </div>
     
-
+<script>
+    $('select').change(function(){
+    if (/iOS/.test(navigator.userAgent)){
+        $(this).blur();
+    }
+});
+</script>
+        
     </body>
 
 </html>
