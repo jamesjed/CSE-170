@@ -1,0 +1,26 @@
+
+#toggle{
+	position: fixed;
+	display: inline-block;
+}
+
+#toggleDiv{
+	width:100vh;
+	height:100vw;
+	position: fixed;
+	z-index: 1;
+}
+
+#displayInfo{
+	display: inline-block;
+	background-color: white;
+	right: 0px;
+	margin-left: auto;
+	margin-right: 0;
+	float: right;
+	width: 95vw;
+	background-color: gray;
+	height: 100vh;
+	position: relative;
+
+}

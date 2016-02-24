@@ -96,6 +96,7 @@
 	background-color: #00AFD1;
 	float: right;
 	height: 100vh;
+	position: fixed;
 }
 
 #textIn{
@@ -114,6 +115,7 @@
 		background-color: #00AFD1;
 		float: right;
 		height: 100vh;
+		position: fixed;
 	}
 
 	#textIn{
