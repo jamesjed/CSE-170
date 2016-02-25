@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 exports.view = function(req, res){
 
 	var data = [];
-
+	
 	mongoose.model('posts').find({}, function(err, posts){
 		//console.log(posts);
 		res.render('bootprac', {postData: posts, layout: false });			
