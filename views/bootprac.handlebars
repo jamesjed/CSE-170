@@ -34,9 +34,9 @@
 	            <div class="collapse navbar-collapse" id="navbar-container">
 	            	<form class="navbar-form" role="search">
 	            		<div class = "form=group">
-    					<input id= "searchBar" type="category" placeholder="Search" class="st-default-search-input" name="document_type"></input> 
-	                		<ul class="nav navbar-nav navbar-right">
-                                <li role="presentation" class="dropdown">
+    					<input id= "searchBar" type="category" placeholder="Search"></input> 		
+                            <ul class="nav navbar-nav navbar-right">
+                                <!-- <li role="presentation" class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Art</a></li>
@@ -45,7 +45,7 @@
                                         <li><a href="#">Food</a></li>
                                         <li><a href="#">Dream</a></li>
                                     </ul>
-                                </li>
+                                </li> -->
 	                    		<li id="navListElement"><a href="./profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>    
 	                    		<li id="navListElement"><a href="/">Logout</a></li>     
 	                		</ul>
@@ -71,6 +71,11 @@
 					</div>
 					<div id="content" class="container-fluid" style="background-color: {{color}} ">
 						<p id="contentText">{{description}}</p>
+					</div>
+                    <div id="author" class="container-fluid" style="background-color: white; height: 25px; padding-left: 3px; padding-right: 3px; padding-top: 3px;">
+						<p style="font-size: 10pt; float: left; color: grey;">Anne Klein</p>
+                        <i id="chat" class="glyphicon glyphicon-comment" style="float: right; color: grey; font-size: 10pt;">10</i>
+                        <i id="like" class="glyphicon glyphicon-heart" style="float: right; color: grey; font-size: 10pt; margin-right: 10px;">20</i>       
 					</div>
 				</div>
                 {{/each}}
@@ -126,17 +131,6 @@
     </div>
   </div>
 </div>
-        
-<!-- Swiftype -->
-<script type="text/javascript">
-(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-_st('install','pe2hQjwXnahGmuByk9S4','2.0.0');
-</script>
-<!-- End Swiftype -->
 
 	</body>
 

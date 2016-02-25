@@ -27,7 +27,7 @@ var postSchema = mongoose.Schema({
 	subtitle: String,
 	description: String,
 	color: String,
-    category: String,
+    tags: [String],
     date: Date
     
 });
@@ -107,7 +107,7 @@ app.post('/newpost', function(req, res){
 	newPost.subtitle = req.body.subtitle;
 	newPost.description = req.body.description;
 	newPost.color = req.body.color;
-    newPost.category = req.body.category;
+    newPost.tags = req.body.tags.replace(/\s/g,'').split(",");
     newPost.date = new Date();
 
 	//error check

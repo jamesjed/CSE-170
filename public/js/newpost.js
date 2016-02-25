@@ -22,7 +22,7 @@ function postNew(){
  	var description = $('#description').val();
  	var colors = ['#1FBBA6', '#F27935', '#A51E51', '#D64541', '#00AFD1', '#313750'];
  	var colorVar = Math.floor(Math.random()*5) + 0;
- 	var cat = $('#category').val();
+ 	var tag = $('#tags').val();
 
 	var newPost = {
 		"imageURL": url,
@@ -30,7 +30,7 @@ function postNew(){
  		"subtitle": subtitle,
  		"description": description,
  		"color": colors[colorVar],
- 		"category": cat
+ 		"tags": tag
 	} 
 	
 	$.post('./newpost', newPost, function(data){
