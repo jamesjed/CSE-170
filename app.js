@@ -97,7 +97,7 @@ app.get('/sample', function(req, res){
 
 app.post('/newpost', function(req, res){
 	console.log("Post request received!");
-	console.log(req.body.value);
+	console.log(req.body);
 
 	
 	var newPost = new PostModel;
