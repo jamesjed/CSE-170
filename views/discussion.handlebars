@@ -18,10 +18,8 @@
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
           ga('create', 'UA-73995106-1', 'https://tranquil-mountain-45267.herokuapp.com/discuss');
           ga('send', 'pageview');
-
         </script>
 
         <style>
@@ -30,10 +28,8 @@
     </head>
 
 <!-- <body style="background-color: white;">
-
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
-
             <div class="navbar-header">
                 <a class="navbar-brand"></a>
                 <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-container">
@@ -43,57 +39,65 @@
                     <li id="navListElement"><a href="./profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>          
                 </ul> -->
                 <!--<div class="collapse navbar-collapse" id="navbar-container">
-
             </div> 
-
              </div>
     </nav> -->
 <body>
+    <div id="toolbar">
+        <center>
+            <div id="brushSize">
+                <span class="glyphicon glyphicon-pencil"></span>
+            </div>
+            <div id="color">
+                <i class="large material-icons">stop</i>
+            </div>
+            <div id="text">
+                <span class="glyphicon glyphicon-font"></span>
+            </div>
+            <div id="mic">
+                <i class="large material-icons">mic</i>
+            </div>
+            <a href="#" style="color: white" id="chatLink">
+            <div id="chat">
+                <i class="large material-icons">chat</i>
+            </div>
+            </a>
+            <div id="clear">
+                <i class="large material-icons">supervisor_account</i>
+            </div>
+            <a href="./sample">
+            <div id="leave">
+                <!--<span class="glyphicon glyphicon-print"></span> -->
+                <span class="glyphicon glyphicon-log-out"></span>
+            </div></a>
+        </center>       
+    </div>
 
-        <!--
-        <div id="toolbar">
-            <center>
-                <div id="brushSize">
-                    <span class="glyphicon glyphicon-pencil"></span>
-                </div>
-                <div id="color">
-                    <i class="large material-icons">stop</i>
-                </div>
-                <div id="text">
-                    <span class="glyphicon glyphicon-font"></span>
-                </div>
-                <div id="mic">
-                    <i class="large material-icons">mic</i>
-                </div>
-                <a href="#" style="color: white" id="chatLink">
-                <div id="chat">
-                    <i class="large material-icons">chat</i>
-                </div>
-                </a>
-                <div id="clear">
-                    <i class="large material-icons">supervisor_account</i>
-                </div>
-                <a href="./sample">
-                <div id="leave">
-                    <!--<span class="glyphicon glyphicon-print"></span>
-                    <span class="glyphicon glyphicon-log-out"></span>
-                </div></a>
-            </center>       
-        </div> -->
+    <div id="displayInfo" class="container-fluid">
+        <div class="container" id="chatWindow">
 
-        <div class="container-fluid tabContent1" id="whiteboardContainer">
-            <center>
-
-                <canvas id="whiteboard">
-
-                    Sorry your broswer does not support html canvas
-                </canvas>
-
-            </center>
         </div>
 
-        <div class="container-fluid" style="background-color: #000000; height: 100px; position: absolute; width:100vw; height: 50px"> 
+        <div class="container">
+            <form type="submit" id="chatData">
+                <input type="text" class="form-control" id="textIn" placeholder="Title" name="column" autocomplete="off">
+                <input class="btn btn-primary" type="submit" name="login" value="Send" style="display:inline-block" id="chatPost">
+            </form>
         </div>
+    </div>
+
+    <div class="container-fluid" id="whiteboardContainer">
+        <center>
+
+            <canvas id="whiteboard">
+
+                Sorry your broswer does not support html canvas
+            </canvas>
+
+        </center>
+    </div>
+
+
 
     <!-- Javascript with whiteboard functionality-->
     <script src="/socket.io/socket.io.js"></script>
