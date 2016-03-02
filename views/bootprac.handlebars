@@ -10,14 +10,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  /*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 		  ga('create', 'UA-73995106-1', 'https://tranquil-mountain-45267.herokuapp.com/sample');
-		  ga('send', 'pageview');
-
+		  ga('send', 'pageview');*/
 		</script>
 
 	<head>
@@ -72,10 +71,10 @@
 					<div id="content" class="container-fluid" style="background-color: {{color}} ">
 						<p id="contentText">{{description}}</p>
 					</div>
-                    <div id="author" class="container-fluid" style="background-color: white; height: 25px; padding-left: 3px; padding-right: 3px; padding-top: 3px;">
-						<p style="font-size: 10pt; float: left; color: grey;">Anne Klein</p>
-                        <i id="chat" class="glyphicon glyphicon-comment" style="float: right; color: grey; font-size: 10pt;">10</i>
-                        <i id="like" class="glyphicon glyphicon-heart" style="float: right; color: grey; font-size: 10pt; margin-right: 10px;">20</i>       
+                    <div id="author" class="container-fluid" style="background-color: {{color}}; height: 25px; padding-left: 3px; padding-right: 3px; padding-top: 3px; padding-bottom: 30px;">
+						<p style="font-size: 10pt; float: left; color: white; padding-left: 20px">Anne Klein</p>
+                        <i id="chat" class="glyphicon glyphicon-comment" style="float: right; color: white; font-size: 10pt; padding-right: 10px">10</i>
+                        <i id="like" class="glyphicon glyphicon-heart" style="float: right; color: white; font-size: 10pt; margin-right: 10px; padding-right: 10px">20</i>       
 					</div>
 				</div>
                 {{/each}}

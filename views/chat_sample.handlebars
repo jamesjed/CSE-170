@@ -5,24 +5,78 @@
         <link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
         <link rel="stylesheet" type="text/css" href="/public/css/newpost.css">
         <script type="text/javascript" src="/public/js/jquery_1.9.js"></script>
+        <script type="text/javascript" src="/public/js/chat_sample.js"></script>
         <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/public/js/chat_sample.js"></script> 
 		<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
         <!-- Text Editor -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
         <style>
-        	#chatWindow{
-        		height: 70vh;
-                overflow: auto;
+        	#navTab1{
+                background-color: gray;
+                bottom: 0px;
+                height: 10%;
+                border-right: 1px solid gray;
         	}
-            .navbar{
+            #navTab2{
+                background-color: #00AFD1;
+                bottom: 0px;
+                height: 10%;
+            }
+            #tabSelectors{
+                bottom: 0px;
+                position: absolute;
                 width: 100vw;
             }
-            html, body{
-                margin: 0;
-                padding: 0;
+            canvas{
+                background-color: white;
+                width: 100%;
+                height: 80%;
+            }
+            a{
+                color: white;
+            }
+            a:hover{
+                color:white;
+            }
+            a:visited{
+                color:white;
+            }
+            a:link{
+                color:white;
+            }
+            h3{
+                color: white;
+            }
+            #whiteboardTitle{
+                display: none;
+            }
+            #chatTitle{
+
+            }
+            #whiteboard{
+                display: none;
+            }
+            #whiteboardSurface{
+            }
+            #chat{
+
+            }
+            #chatWindow{
+                background-color: white;
+                height: 60vh;
+                width: 100%;
+            }
+            #mute{
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+            #leave{
+                position: absolute;
+                left: 0px;
+                top: 0px;
             }
         </style>
 
@@ -30,35 +84,52 @@
 
 <body>
 
-    <nav class="navbar navbar-default" role="navigation" style="background-color: white">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href='/discuss'><< Whiteboard</a>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-container">
-                </button>
+
+    <button type="button" id="mute">Mute!!</button>
+    <button type="button" id="leave" onclick="window.location='/sample';">Leave</button>
+
+    <div class="container" id="tabSelectors">
+        <div class="row">
+
+            <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="whiteboard"> 
+                <center>
+                    <canvas id="whiteboardSurface"></canvas>
+                </center>
             </div>
-            <div class="collapse navbar-collapse" id="navbar-container">
-                    <form class="navbar-form" role="search">
-                        <div class = "form=group">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li id="navListElement"><a href="./profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>      
-                                <li id="navListElement"><a href="/">Logout</a></li>        
-                            </ul>
-                        </div>
+
+            <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="chat">
+
+                <div class="container" id="chatWindow">
+
+                </div>
+
+                <div class="container">
+                    <form type="submit" id="chatData">
+                        <input type="text" class="form-control" id="textIn" placeholder="Title" name="column" autocomplete="off">
+                        <input class="btn btn-primary" type="submit" name="login" value="Send" style="display:inline-block" id="chatPost">
                     </form>
-           </div>
+                </div>
+
         </div>
-    </nav>
 
-	<div class="container" id="chatWindow">
+        <div class="row">
+            <a href="#">
+            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6" id="navTab1"> 
+                <center>
+                <p>Draw</p>
+            </center>
+            </div>
+            </a>
 
-	</div>
+            <a href="#">
+            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6" id="navTab2"> 
+                <center>
+                <p>Chat</p>
+            </center>
+            </div>
+            </a>
 
-    <div class="container">
-    	<form type="submit" id="chatData">
-            <input type="text" class="form-control" id="textIn" placeholder="Title" name="column">
-            <input class="btn btn-primary" type="submit" name="login" value="Send" style="float: right;" id="chatPost">
-    	</form>
+        </div>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>

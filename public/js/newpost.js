@@ -32,8 +32,11 @@ function postNew(){
  		"color": colors[colorVar],
  		"tags": tag
 	} 
+
+
 	
 	$.post('./newpost', newPost, function(data){
+		console.log(data);
 	}); 
 
 

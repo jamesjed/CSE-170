@@ -10,6 +10,7 @@ var multer = require('multer');
 var app = express();
 
 var post = require('./routes/post');
+var analytics = require('./routes/analytics');
 
 
 // Listen on provided or default port =====================
@@ -97,7 +98,7 @@ app.get('/sample', function(req, res){
 
 app.post('/newpost', function(req, res){
 	console.log("Post request received!");
-	console.log(req.body.value);
+	console.log(req.body);
 
 	
 	var newPost = new PostModel;
@@ -195,9 +196,8 @@ app.get('/profile', function(req, res) {
     res.render("profile", {layout: false});
 });
 
-app.get('/discuss', function(req, res) {
-    res.render("discussion", {layout: false});
-});
+app.get('/discuss', analytics.viewA);
+app.get('/chat', analytics.viewB);
 
 app.get('/preview', function(req, res) {
     res.render("preview", {layout: false});
@@ -211,8 +211,5 @@ app.get('/following', function(req, res) {
 	res.render("following", {layout: false});
 });
 
-app.get('/chat', function(req, res){
-	res.render("chat_sample", {layout: false});
-});
 
 

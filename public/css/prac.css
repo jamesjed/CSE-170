@@ -57,6 +57,10 @@ i{
 #picture{
 	max-width: 100%;
 }
+#divider{
+	height: 0.1px;
+    border-top: thick solid white;
+}
 #content{
 	/*background-color: white;*/
 	padding-top: 1px;
