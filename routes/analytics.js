@@ -1,4 +1,5 @@
 exports.viewA = function(req, res){
+
 	var random_num = Math.random(); 
     console.log(random_num);
     
@@ -16,8 +17,10 @@ exports.viewA = function(req, res){
   };
 
 exports.viewB = function(req, res){
+
     console.log("In B if");
     var versionA = true;
     res.render("discussion", {versionA : true, layout: false});
 
  };
+
