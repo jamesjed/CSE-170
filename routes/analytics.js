@@ -1,13 +1,14 @@
 exports.viewA = function(req, res){
-
-	var random_num = Math.random(); 
+    var x = 1;
+    var y = 10;
+	var random_num = Math.floor(Math.random() * ((y-x)+1)+x); 
     console.log(random_num);
     
-    if (random_num < 0.5) 
+    if (random_num > 5) 
     {
         console.log("In A if");
-        var versionA = false;
-        res.render("discussion", {versionA : false, layout: false});
+        var versionA = true;
+        res.render("discussion", {versionA : true, layout: false});
     } 
     else
     {
@@ -19,8 +20,8 @@ exports.viewA = function(req, res){
 exports.viewB = function(req, res){
 
     console.log("In B if");
-    var versionA = true;
-    res.render("discussion", {versionA : true, layout: false});
+    var versionA = false;
+    res.render("discussion", {versionA : false, layout: false});
 
  };
 

@@ -1,6 +1,7 @@
 <html>
 
     <head>
+        
         <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
         <link rel="stylesheet" type="text/css" href="/public/css/newpost.css">
@@ -52,6 +53,9 @@
             <fieldset class="form-group">
                 <label for="exampleInputEmail1">Image URL</label>
                 <input type="text" class="form-control" id="postImage" placeholder="Title" name="column">
+                <label for="exampleInputEmail1">Or</label>
+                <input type="file" class="form-control-file" id="postImage">
+               <!-- <i class="fa fa-camera-retro fa-lg" type="file" class="form-control-file" id="exampleInputFile"></i> -->
             </fieldset>
             
             <!-- Post Catogories -->
@@ -61,11 +65,7 @@
             </fieldset>
             
             <fieldset class="form-group">
-                <div class="btn-group">
-                    <i class="fa fa-camera-retro fa-lg" type="file" class="form-control-file" id="exampleInputFile"></i>
-                </div>
-
-            <textarea type="text" class="form-control" id="description" placeholder="Description" name="description" rows="3" style="height: 30vh;"></textarea>
+                <textarea type="text" class="form-control" id="description" placeholder="Description" name="description" rows="3" style="height: 30vh;"></textarea>
 
             </fieldset>
             
