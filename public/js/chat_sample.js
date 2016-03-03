@@ -26,7 +26,7 @@ function initialize(){
 		$('#whiteboard').css({'display': 'inline'});
 		$('#chatTitle').css({'display': 'none'});
 		$('#chat').css({'display': 'none'});
-		ga('send', 'event', 'Tab-Click', 'Whiteboard-Click');
+		ga('send', 'event', 'Tab-Click', 'Whiteboard-Click', 'Hello', 1);
 	});
 
 	$('#navTab2').on('click', function(){
