@@ -25,6 +25,7 @@ prevPointMouse.x = 1;
 $("#chatLink").click(function(){
 	$("#displayInfo").slideToggle('right');
 	event.preventDefault();
+	ga('send', 'event', 'Tab-Click', 'Whiteboard-Click');
 	return true;
 });
 
