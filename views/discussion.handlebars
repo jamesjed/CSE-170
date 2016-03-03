@@ -1,7 +1,7 @@
 <html>
 
     <head>
-
+        {{whiteboardExperiment}}
         <link rel="stylesheet" type="text/css" href="/public/css/discussion.css"></link>
         <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
@@ -43,6 +43,7 @@
              </div>
     </nav> -->
 <body>
+    {{#if versionA}}
     <div id="toolbar">
         <center>
             <div id="brushSize">
@@ -96,13 +97,13 @@
 
         </center>
     </div>
-
+    {{/if}}
 
 
     <!-- Javascript with whiteboard functionality-->
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="/public/js/whiteboard.js"></script>
-
+    {{> googleAnalytics}}
 </body>
 
 </html>
