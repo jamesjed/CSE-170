@@ -1,7 +1,7 @@
 exports.viewA = function(req, res){
 	var randomNum = Math.random();
 
-	if (randomNum > 0.5){
+	if (randomNum > 0){
  	   res.render("discussion", {layout: false})
  	   console.log(randomNum);
 	}
@@ -14,7 +14,7 @@ exports.viewA = function(req, res){
 
  	var randomNum = Math.random();
 
- 	if (randomNum > 0.5){
+ 	if (randomNum > 0){
     	res.render("chat_sample", {versionB : true, layout: false});
     	   console.log(randomNum);
     }
