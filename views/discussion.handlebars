@@ -2,6 +2,7 @@
 
     <head>
         {{> testExperiment}}
+
         <link rel="stylesheet" type="text/css" href="/public/css/discussion.css"></link>
         <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
@@ -55,7 +56,7 @@
             <div id="mic">
                 <i class="large material-icons">mic</i>
             </div>
-            <a href="#" style="color: white" id="chatLink">
+            <a href="#" style="color: white" id="chatLink" onclick="ga('send', 'event', 'Tab-Click', 'Whiteboard-Click');">
             <div id="chat">
                 <i class="large material-icons">chat</i>
             </div>
