@@ -1,7 +1,7 @@
 <html>
 
     <head>
-        {{> whiteboardExperiment}}
+        {{> testExperiment}}
         <link rel="stylesheet" type="text/css" href="/public/css/discussion.css"></link>
         <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
@@ -22,7 +22,6 @@
           ga('send', 'pageview');
         </script>-->
 
-
     </head>
 
 <!-- <body style="background-color: white;">
@@ -41,9 +40,9 @@
              </div>
     </nav> -->
 <body>
-    {{#if versionA}}
     <div id="toolbar">
         <center>
+
             <div id="brushSize">
                 <span class="glyphicon glyphicon-pencil"></span>
             </div>
@@ -95,13 +94,14 @@
 
         </center>
     </div>
-    {{/if}}
 
 
     <!-- Javascript with whiteboard functionality-->
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="/public/js/whiteboard.js"></script>
+
     {{> googleAnalytics}}
+
 </body>
 
 </html>
