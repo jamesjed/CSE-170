@@ -27,6 +27,7 @@ function initialize(){
 		$('#chatTitle').css({'display': 'none'});
 		$('#chat').css({'display': 'none'});
 		ga('send', 'event', 'Tab-Click', 'Whiteboard-Click', 'Hello', 1);
+		_gaq.push(['_trackEvent', 'button3', 'clicked']);
 	});
 
 	$('#navTab2').on('click', function(){

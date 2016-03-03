@@ -26,6 +26,7 @@ $("#chatLink").click(function(){
 	$("#displayInfo").slideToggle('right');
 	event.preventDefault();
 	ga('send', 'event', 'Tab-Click', 'Whiteboard-Click', 'hello', 1);
+	_gaq.push(['_trackEvent', 'button3', 'clicked']);
 	return true;
 });
 
