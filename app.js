@@ -264,14 +264,6 @@ app.get('/sample', function(req, res) {
     res.render("bootprac", {layout: false});
 });  */
 
-app.get('/login', function(req, res) {
-    res.render("login");
-});
-
-app.get('/signup', function(req, res) {
-    res.render("signup");
-});
-
 
 app.get('/newpost', function(req, res) {
     res.render("newpost", {layout: false});
