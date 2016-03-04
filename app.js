@@ -4,7 +4,20 @@ var mongodb = require("mongodb");
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var multer = require('multer');
+var path = require('path');
+var logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    methodOverride = require('method-override'),
+    session = require('express-session'),
+    passport = require('passport'),
+    LocalStrategy = require('passport-local'),
+    TwitterStrategy = require('passport-twitter'),
+    GoogleStrategy = require('passport-google'),
+    FacebookStrategy = require('passport-facebook');
+
+//var fileUpload = require('express-fileupload');
 //var session = require('express-session');
+
 
 // Initialize express object
 var app = express();
@@ -17,6 +30,37 @@ var analytics = require('./routes/analytics');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(logger('combined'));
+app.use(cookieParser());
+app.use(methodOverride('X-HTTP-Method-Override'));
+app.use(session({secret: 'supernova', saveUninitialized: true, resave: true}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Session-persisted message middleware
+app.use(function(req, res, next){
+  var err = req.session.error,
+      msg = req.session.notice,
+      success = req.session.success;
+
+  delete req.session.error;
+  delete req.session.success;
+  delete req.session.notice;
+
+  if (err) res.locals.error = err;
+  if (msg) res.locals.notice = msg;
+  if (success) res.locals.success = success;
+
+  next();
+});
+
+// Configure express to use handlebars templates
+var hbs = exphbs.create({
+    defaultLayout: 'main', //we will be creating this layout shortly
+});
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 //app.use(session({secret: "secret", resave:false,saveUninitialized:true}))
 //app.use(multer());
 
@@ -25,6 +69,7 @@ mongoose.connect('mongodb://james:zerowing1@ds059125.mongolab.com:59125/cse170')
 var postSchema = mongoose.Schema({
 	title: String,
 	imageURL: String,
+    imageUPL: String,
 	subtitle: String,
 	description: String,
 	color: String,
@@ -83,6 +128,7 @@ app.set('view engine', 'handlebars');
 app.use('/public', express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 
+app.set('views', path.join(__dirname, 'views'));
 
 
 // Routing ================================================
@@ -96,21 +142,50 @@ app.get('/sample', function(req, res){
 	res.render("bootprac", {layout:false});
 }); */
 
-app.post('/newpost', function(req, res){
-	console.log("Post request received!");
-	console.log(req.body);
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/uploads/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + '.jpg') //Appending .jpg
+  }
+});
 
-	
+var upload = multer({ storage: storage});
+//var upload = multer({ dest: 'public/uploads/'});
+
+app.post('/newpost', upload.single('upl'), function(req, res){
+    
+  //  upload.single(req.body.upl.replace("C:\\fakepath\\", ""));
+    console.log("Post request received!");
+//    console.log(req, 'what2');
+	console.log(req.body);
+    console.log(req.file);
+    
+
+    
+    var colors = ['#1FBBA6', '#F27935', '#A51E51', '#D64541', '#00AFD1', '#313750'];
+ 	var colorVar = Math.floor(Math.random()*5) + 0;
+    
 	var newPost = new PostModel;
 
 	newPost.title = req.body.title;
 	newPost.imageURL = req.body.imageURL;
+    
 	newPost.subtitle = req.body.subtitle;
 	newPost.description = req.body.description;
-	newPost.color = req.body.color;
+	newPost.color = colors[colorVar]
     newPost.tags = req.body.tags.replace(/\s/g,'').split(",");
     newPost.date = new Date();
-
+    
+    if(req.file == undefined)
+    {
+        newPost.imageUPL = "";
+    }
+    else
+    {
+        newPost.imageUPL = req.file.path;
+    }
 	//error check
 	newPost.save(function(err, savedObject){
 		if(err){
@@ -119,9 +194,10 @@ app.post('/newpost', function(req, res){
 		}
 	}); 
     
-	res.sendStatus(200);
+    res.status(200).send('<html><body></body><script type="text/javascript">window.location.href="/sample";</script></html>');
+//	res.sendStatus(200);
+//    res.redirect(307, '/sample');
 	res.end();
-
 });
 
 app.post('/', function(req, res){
@@ -187,6 +263,15 @@ app.get('/sample', post.view);
 app.get('/sample', function(req, res) {
     res.render("bootprac", {layout: false});
 });  */
+
+app.get('/login', function(req, res) {
+    res.render("login");
+});
+
+app.get('/signup', function(req, res) {
+    res.render("signup");
+});
+
 
 app.get('/newpost', function(req, res) {
     res.render("newpost", {layout: false});

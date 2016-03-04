@@ -38,30 +38,32 @@
     </nav>
 
         <div class="container">
-            <form role="form" method="post" >
+            <form id="newPostForm" enctype="multipart/form-data" role="form" method="post" action="/newpost">
             <!-- Title box -->
             <fieldset class="form-group">
                 <label for="exampleInputEmail1">Title</label>
-                <input type="text" class="form-control" id="postTitle" placeholder="Title" name="column">
+                <input type="text" class="form-control" id="postTitle" placeholder="Title" name="title">
             </fieldset>
 
             <fieldset class="form-group">
                 <label for="exampleInputEmail1">Subtitle</label>
-                <input type="text" class="form-control" id="postSubtitle" placeholder="Title" name="column">
+                <input type="text" class="form-control" id="postSubtitle" placeholder="Title" name="subtitle">
             </fieldset>
 
             <fieldset class="form-group">
                 <label for="exampleInputEmail1">Image URL</label>
-                <input type="text" class="form-control" id="postImage" placeholder="Title" name="column">
+                <input type="text" class="form-control" id="postImage" placeholder="Title" name="imageURL">
                 <label for="exampleInputEmail1">Or</label>
-                <input type="file" class="form-control-file" id="postImage">
+                <input type="file" name="upl">
+                
+                
                <!-- <i class="fa fa-camera-retro fa-lg" type="file" class="form-control-file" id="exampleInputFile"></i> -->
             </fieldset>
             
             <!-- Post Catogories -->
             <fieldset class="form-group">
                 <label for="exampleInputEmail1">Tags</label>
-                <input type="text" class="form-control" id="tags" placeholder="Tags" name="column">
+                <input type="text" class="form-control" id="tags" placeholder="Tags" name="tags" value="">
             </fieldset>
             
             <fieldset class="form-group">
@@ -73,7 +75,7 @@
             <input class="btn btn-primary" type="button" name="login" value="Cancel" method="get" action="/profile"/ onclick="window.location='./sample';">
 
 
-            <input class="btn btn-primary" type="button" name="login" value="Post" style="float: right;"  method="post" id="postNew" onclick="window.location='./sample';">
+            <input class="btn btn-primary" type="submit" name="login" value="Post" style="float: right;"  method="post" id="postNew">
                 
             <input class="btn btn-primary" type="button" name="login" value="Save Draft" style="float: right; margin-right: 10px;"  method="post"  action="/profile"/ onclick="window.location='./sample';">
                 
@@ -81,14 +83,6 @@
         
         
         </div>
-    
-<script>
-    $('select').change(function(){
-    if (/iOS/.test(navigator.userAgent)){
-        $(this).blur();
-    }
-});
-</script>
         
     </body>
 
