@@ -1,6 +1,7 @@
 <html>
 
 <head>
+        {{> testExperiment}}
 		<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
         <link rel="stylesheet" type="text/css" href="/public/css/newpost.css">
@@ -84,7 +85,7 @@
 
 <body>
 
-
+    {{#if versionB}}
     <button type="button" id="mute">Mute!!</button>
     <button type="button" id="leave" onclick="window.location='/sample';">Leave</button>
 
@@ -131,8 +132,9 @@
 
         </div>
     </div>
-
+    {{/if}}
     <script src="/socket.io/socket.io.js"></script>
+    {{> googleAnalytics}}
 </body>
 
 </html>

@@ -281,6 +281,12 @@ app.get('/profile', function(req, res) {
     res.render("profile", {layout: false});
 });
 
+
+/*app.get('/discuss', function(req, res) {
+    res.render("discussion", {layout: false});
+});*/
+
+
 app.get('/discuss', analytics.viewA);
 app.get('/chat', analytics.viewB);
 
@@ -296,5 +302,9 @@ app.get('/following', function(req, res) {
 	res.render("following", {layout: false});
 });
 
+
+/*app.get('/chat', function(req, res){
+	res.render("chat_sample", {layout: false});
+});*/
 
 
