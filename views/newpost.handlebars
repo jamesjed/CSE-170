@@ -1,6 +1,7 @@
 <html>
 
     <head>
+        
         <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
         <link rel="stylesheet" type="text/css" href="/public/css/newpost.css">
@@ -37,67 +38,51 @@
     </nav>
 
         <div class="container">
-            <form role="form" method="post" >
+            <form id="newPostForm" enctype="multipart/form-data" role="form" method="post" action="/newpost">
             <!-- Title box -->
             <fieldset class="form-group">
                 <label for="exampleInputEmail1">Title</label>
-                <input type="text" class="form-control" id="postTitle" placeholder="Title" name="column">
+                <input type="text" class="form-control" id="postTitle" placeholder="Title" name="title">
             </fieldset>
 
             <fieldset class="form-group">
                 <label for="exampleInputEmail1">Subtitle</label>
-                <input type="text" class="form-control" id="postSubtitle" placeholder="Title" name="column">
+                <input type="text" class="form-control" id="postSubtitle" placeholder="Title" name="subtitle">
             </fieldset>
 
             <fieldset class="form-group">
                 <label for="exampleInputEmail1">Image URL</label>
-                <input type="text" class="form-control" id="postImage" placeholder="Title" name="column">
+                <input type="text" class="form-control" id="postImage" placeholder="Title" name="imageURL">
+                <label for="exampleInputEmail1">Or</label>
+                <input type="file" name="upl">
+                
+                
+               <!-- <i class="fa fa-camera-retro fa-lg" type="file" class="form-control-file" id="exampleInputFile"></i> -->
             </fieldset>
             
             <!-- Post Catogories -->
             <fieldset class="form-group">
                 <label for="exampleInputEmail1">Tags</label>
-                <input type="text" class="form-control" id="tags" placeholder="Tags" name="column">
+                <input type="text" class="form-control" id="tags" placeholder="Tags" name="tags" value="">
             </fieldset>
             
             <fieldset class="form-group">
-                <div class="btn-group">
-                    <i class="fa fa-bold"></i>
-                    <i class="fa fa-italic"></i>
-                    <i class="fa fa-font"></i>
-                    <i class="fa fa-strikethrough"></i>
-                    <i class="fa fa-align-left"></i>
-                    <i class="fa fa-align-justify"></i>
-                    <i class="fa fa-align-right"></i>
-                    <i class="fa fa-list"></i>
-                    <i class="fa fa-columns"></i>
-                    <i class="fa fa-camera-retro fa-lg" type="file" class="form-control-file" id="exampleInputFile"></i>
-                </div>
-
-            <textarea type="text" class="form-control" id="description" placeholder="Description" name="description" rows="3" style="height: 30vh;"></textarea>
+                <textarea type="text" class="form-control" id="description" placeholder="Description" name="description" rows="3" style="height: 30vh;"></textarea>
 
             </fieldset>
             
 
-            <input class="btn btn-primary" type="button" name="login" value="Cancel" style="float: right;"  method="get" action="/profile"/ onclick="window.location='./sample';">
-
-            <input class="btn btn-primary" type="button" name="login" value="Save Draft" style="float: right;"  method="post"  action="/profile"/ onclick="window.location='./sample';">
+            <input class="btn btn-primary" type="button" name="login" value="Cancel" method="get" action="/profile"/ onclick="window.location='./sample';">
 
 
-            <input class="btn btn-primary" type="button" name="login" value="Post" style="float: right;"  method="post" id="postNew" onclick="window.location='./sample';">
+            <input class="btn btn-primary" type="submit" name="login" value="Post" style="float: right;"  method="post" id="postNew">
+                
+            <input class="btn btn-primary" type="button" name="login" value="Save Draft" style="float: right; margin-right: 10px;"  method="post"  action="/profile"/ onclick="window.location='./sample';">
                 
             </form>
         
         
         </div>
-    
-<script>
-    $('select').change(function(){
-    if (/iOS/.test(navigator.userAgent)){
-        $(this).blur();
-    }
-});
-</script>
         
     </body>
 

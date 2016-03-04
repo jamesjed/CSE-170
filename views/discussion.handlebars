@@ -20,8 +20,7 @@
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
           ga('create', 'UA-73995106-1', 'https://tranquil-mountain-45267.herokuapp.com/discuss');
-          ga('send', 'pageview');
-        </script>-->
+
 
     </head>
 
@@ -41,6 +40,9 @@
              </div>
     </nav> -->
 <body>
+
+    <!-- DESIGN A -->
+    {{#if versionA}}
     <div id="toolbar">
         <center>
 
@@ -89,7 +91,6 @@
         <center>
 
             <canvas id="whiteboard">
-
                 Sorry your broswer does not support html canvas
             </canvas>
 
@@ -100,8 +101,9 @@
     <!-- Javascript with whiteboard functionality-->
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="/public/js/whiteboard.js"></script>
-
+    
     {{> googleAnalytics}}
+
 
 </body>
 

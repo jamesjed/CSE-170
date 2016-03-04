@@ -1,4 +1,5 @@
 exports.viewA = function(req, res){
+
 	var randomNum = Math.random();
 
 	if (randomNum > 0){
@@ -23,6 +24,5 @@ exports.viewA = function(req, res){
     	res.redirect('/discuss');
     }
  };
-
 
 

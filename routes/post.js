@@ -6,9 +6,19 @@ var mongoose = require('mongoose');
 exports.view = function(req, res){
 
 	var data = [];
+	var tags = {}; 
+    
+    if (req.query.search != undefined && req.query.search.length > 0) {
+        tags = {'tags': {$in: req.query.search.toLowerCase().split(' ')}};
+    } 
+        
 	
-	mongoose.model('posts').find({}, function(err, posts){
-		//console.log(posts);
+	mongoose.model('posts').find(tags , function(err, posts){
+		
+        if(posts.length <= 0) {
+            
+        }
+        
 		res.render('bootprac', {postData: posts, layout: false });			
 	}).sort({"date": -1});
 	
