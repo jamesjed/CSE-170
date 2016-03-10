@@ -1,8 +1,8 @@
 <html>
 
     <head>
-        {{> testExperiment}}
-
+        {{> whiteboardExperiment}}
+        <!-- DESIGN A -->
         <link rel="stylesheet" type="text/css" href="/public/css/discussion.css"></link>
         <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
@@ -14,13 +14,88 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-        <!--<script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        <!-- DESIGN B --> 
+        <link rel="stylesheet" type="text/css" href="/public/css/newpost.css">
+        <script type="text/javascript" src="/public/js/chat_sample.js"></script>
+        <!-- Text Editor -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+        <script>
+          /*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
           ga('create', 'UA-73995106-1', 'https://tranquil-mountain-45267.herokuapp.com/discuss');
+          ga('send', 'pageview');*/
+        </script>
 
+        <style>
+            #navTab1{
+                background-color: gray;
+                bottom: 0px;
+                height: 10%;
+                border-right: 1px solid gray;
+            }
+            #navTab2{
+                background-color: #00AFD1;
+                bottom: 0px;
+                height: 10%;
+            }
+            #tabSelectors{
+                bottom: 0px;
+                position: absolute;
+                width: 100vw;
+            }
+            canvas{
+                background-color: white;
+                width: 100%;
+                height: 80%;
+            }
+            a{
+                color: white;
+            }
+            a:hover{
+                color:white;
+            }
+            a:visited{
+                color:white;
+            }
+            a:link{
+                color:white;
+            }
+            h3{
+                color: white;
+            }
+            #whiteboardTitle{
+                display: none;
+            }
+            #chatTitle{
+
+            }
+            #whiteboard{
+                display: none;
+            }
+            #whiteboardSurface{
+            }
+            #chat{
+
+            }
+            #chatWindow{
+                background-color: white;
+                height: 60vh;
+                width: 100%;
+            }
+            #mute{
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+            #leave{
+                position: absolute;
+                left: 0px;
+                top: 0px;
+            }
+        </style>
 
     </head>
 
@@ -45,7 +120,6 @@
     {{#if versionA}}
     <div id="toolbar">
         <center>
-
             <div id="brushSize">
                 <span class="glyphicon glyphicon-pencil"></span>
             </div>
@@ -58,7 +132,7 @@
             <div id="mic">
                 <i class="large material-icons">mic</i>
             </div>
-            <a href="#" style="color: white" id="chatLink" onclick="ga('send', 'event', 'Tab-Click', 'Whiteboard-Click');">
+            <a href="#" style="color: white" id="chatLink">
             <div id="chat">
                 <i class="large material-icons">chat</i>
             </div>
@@ -98,12 +172,60 @@
     </div>
 
 
+    <!-- DESIGN B -->
+    {{else}}
+    <button type="button" id="mute">Mute!!</button>
+    <button type="button" id="leave" onclick="window.location='/sample';">Leave</button>
+
+    <div class="container" id="tabSelectors">
+        <div class="row">
+
+            <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="whiteboard"> 
+                <center>
+                    <canvas id="whiteboardSurface"></canvas>
+                </center>
+            </div>
+
+            <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="chat">
+
+                <div class="container" id="chatWindow">
+
+                </div>
+
+                <div class="container">
+                    <form type="submit" id="chatData">
+                        <input type="text" class="form-control" id="textIn" placeholder="Title" name="column" autocomplete="off">
+                        <input class="btn btn-primary" type="submit" name="login" value="Send" style="display:inline-block" id="chatPost">
+                    </form>
+                </div>
+
+        </div>
+
+        <div class="row">
+            <a href="#">
+            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6" id="navTab1"> 
+                <center>
+                <p>Draw</p>
+            </center>
+            </div>
+            </a>
+
+            <a href="#">
+            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6" id="navTab2"> 
+                <center>
+                <p>Chat</p>
+            </center>
+            </div>
+            </a>
+
+        </div>
+    </div>
+    {{/if}}
+
     <!-- Javascript with whiteboard functionality-->
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="/public/js/whiteboard.js"></script>
-    
     {{> googleAnalytics}}
-
 
 </body>
 

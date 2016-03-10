@@ -1,8 +1,6 @@
 <html>
 
 <head>
-        {{> testExperiment}}
-
 		<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/public/css/flat/dist/css/flat-ui.min.css">
         <link rel="stylesheet" type="text/css" href="/public/css/newpost.css">
@@ -86,6 +84,7 @@
 
 <body>
 
+
     <button type="button" id="mute">Mute!!</button>
     <button type="button" id="leave" onclick="window.location='/sample';">Leave</button>
 
@@ -114,7 +113,7 @@
         </div>
 
         <div class="row">
-            <a href="#" onclick="ga('send', 'event', 'Tab-Click', 'Whiteboard-Click'); _gaq.push(['_trackEvent', 'QR_Win_A_Grand', 'Clicked through to Register']);">
+            <a href="#">
             <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6" id="navTab1"> 
                 <center>
                 <p>Draw</p>
@@ -134,7 +133,6 @@
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
-    {{> googleAnalytics}}
 </body>
 
 </html>

@@ -4,20 +4,7 @@ var mongodb = require("mongodb");
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var multer = require('multer');
-var path = require('path');
-var logger = require('morgan'),
-    cookieParser = require('cookie-parser'),
-    methodOverride = require('method-override'),
-    session = require('express-session'),
-    passport = require('passport'),
-    LocalStrategy = require('passport-local'),
-    TwitterStrategy = require('passport-twitter'),
-    GoogleStrategy = require('passport-google'),
-    FacebookStrategy = require('passport-facebook');
-
-//var fileUpload = require('express-fileupload');
 //var session = require('express-session');
-
 
 // Initialize express object
 var app = express();
@@ -30,37 +17,6 @@ var analytics = require('./routes/analytics');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(logger('combined'));
-app.use(cookieParser());
-app.use(methodOverride('X-HTTP-Method-Override'));
-app.use(session({secret: 'supernova', saveUninitialized: true, resave: true}));
-app.use(passport.initialize());
-app.use(passport.session());
-
-// Session-persisted message middleware
-app.use(function(req, res, next){
-  var err = req.session.error,
-      msg = req.session.notice,
-      success = req.session.success;
-
-  delete req.session.error;
-  delete req.session.success;
-  delete req.session.notice;
-
-  if (err) res.locals.error = err;
-  if (msg) res.locals.notice = msg;
-  if (success) res.locals.success = success;
-
-  next();
-});
-
-// Configure express to use handlebars templates
-var hbs = exphbs.create({
-    defaultLayout: 'main', //we will be creating this layout shortly
-});
-
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
 //app.use(session({secret: "secret", resave:false,saveUninitialized:true}))
 //app.use(multer());
 
@@ -69,7 +25,7 @@ mongoose.connect('mongodb://james:zerowing1@ds059125.mongolab.com:59125/cse170')
 var postSchema = mongoose.Schema({
 	title: String,
 	imageURL: String,
-    imageUPL: String,
+	imageUPL: String,
 	subtitle: String,
 	description: String,
 	color: String,
@@ -128,7 +84,6 @@ app.set('view engine', 'handlebars');
 app.use('/public', express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 
-app.set('views', path.join(__dirname, 'views'));
 
 
 // Routing ================================================
@@ -264,7 +219,6 @@ app.get('/sample', function(req, res) {
     res.render("bootprac", {layout: false});
 });  */
 
-
 app.get('/newpost', function(req, res) {
     res.render("newpost", {layout: false});
 });
@@ -272,12 +226,6 @@ app.get('/newpost', function(req, res) {
 app.get('/profile', function(req, res) {
     res.render("profile", {layout: false});
 });
-
-
-/*app.get('/discuss', function(req, res) {
-    res.render("discussion", {layout: false});
-});*/
-
 
 app.get('/discuss', analytics.viewA);
 app.get('/chat', analytics.viewB);
@@ -294,9 +242,5 @@ app.get('/following', function(req, res) {
 	res.render("following", {layout: false});
 });
 
-
-/*app.get('/chat', function(req, res){
-	res.render("chat_sample", {layout: false});
-});*/
 
 
