@@ -20,29 +20,9 @@
 	<head>
 
 	<body>
-
-	<!--    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: white">
-	        <div class="container">
-	            <div class="navbar-header">
-	                <a class="navbar-brand">Invenire</a>
-	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-container">
-	                </button>
-	            </div>
-	            <div class="collapse navbar-collapse" id="navbar-container">
-	            	<form class="navbar-form" role="search">
-	            		<div class = "form=group">
-    					<input name="search" id= "searchBar" type="category" placeholder="Search"></input> 		
-                            <ul class="nav navbar-nav navbar-right">
-	                    		<li id="navListElement"><a href="./profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>    
-	                    		<li id="navListElement"><a href="/">Logout</a></li>     
-	                		</ul>
-    					</div>
-    				</form>
-	            </div>
-	        </div>
-	    </nav> -->
         <!-- seaech -->
-        <header class="cd-main-header">
+        
+        <header class="cd-main-header container">
         
 		<a class="navbar-brand" href="/sample">Invenire</a>
 
@@ -50,16 +30,17 @@
 			<li><a class="cd-search-trigger" href="#cd-search"><span></span></a></li>
 			<li><a class="cd-nav-trigger" href="#cd-primary-nav"><span></span></a></li>
 		</ul> <!-- cd-header-buttons -->
-        
+         
 	</header> <!-- search end -->
+        
 <main class="cd-main-content">
-		<div class="container " id="postDiv">
+		<div class="container" id="postDiv">
 			<div class="row" id="grid">
                 
                 <!-- data from data.json -->
                 {{#each postData}}
                 <div class="col col-lg-4 col-md-4 col-sm-6 col-xs-12 centered grid-item" id="post">
-					<a id="postLink" href="./discuss"> 
+					<a id="postLink" onclick="window.location='./chat'"> 
 					<div id="imageborder">
 						<img id="picture" src="{{imageURL}}"> 
 					</div>
@@ -102,11 +83,11 @@
     <nav class="cd-nav">
 		<ul id="cd-primary-nav" class="cd-primary-nav is-fixed">
 			<li class="has-children">
-				<a href="/profile">Profile</a>
+				<a onclick="window.location='./profile';">Profile</a>
 			</li>
 
 			<li class="has-children">
-				<a href="/">Logout</a>
+				<a onclick="window.location='/';">Logout</a>
 			</li>
 		</ul> <!-- primary-nav -->
 	</nav> <!-- cd-nav -->
